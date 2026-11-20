@@ -281,7 +281,7 @@ tfoot td{font-weight:700;background:var(--surface-2)}
 <script>
 (function(){
 'use strict';
-var STORE='炭烤桶仔雞（示範店家）';
+var STORE='大仁哥碳烤蔗香脆皮桶仔雞';
 var PRICE={chicken:499,kimchi:200,essence:100};
 var ME_NAME='示範客人', BAD_NAME='陳○豪';
 var NAMES=['林○宏','黃○雯','張○豪','李○君','吳○廷','蔡○芬','周○安','鄭○琳','謝○翔','洪○如','邱○傑','賴○萱','徐○誠','何○儀','簡○達','葉○穎','方○宇','潘○慈','杜○恩','范○婷','宋○霖','高○璇','羅○成','石○瑜','戴○偉','孫○德','馬○蓉','朱○恆','胡○昀','郭○萍','曹○嘉','袁○豪','許○甄','鍾○翰','彭○妤','蕭○群','田○綸','董○晴','溫○川','傅○芸','沈○凱','韓○薇','唐○軒','馮○雅','程○廷','魏○璋','呂○蓁','蘇○男','丁○靜','游○哲','江○萱','余○仁','卓○妍','藍○安','柯○宸'];
@@ -483,7 +483,7 @@ function renderCust(){
     return '<button data-act="cust" data-v="'+x[0]+'" class="'+(S.custScreen===x[0]?'on':'')+'">'+x[1]+b+'</button>';
   }).join('');
   document.getElementById('cust').innerHTML='<div class="sbar"><span class="num">'+fmt(S.now)+'</span><span>5G ▮▮▮</span></div>'+
-    '<div class="lhead"><span class="av">雞</span><span class="t"><b>'+STORE+'</b><span>LINE 官方帳號</span></span><span class="lpill">LINE</span></div>'+
+    '<div class="lhead"><span class="av">雞</span><span class="t"><b>'+STORE+'</b><span>LINE 官方帳號（示範畫面）</span></span><span class="lpill">LINE</span></div>'+
     '<div class="scroll" data-scroll="cust-'+S.custScreen+'">'+body+'</div><nav class="cnav">'+nav+'</nav>';
 }
 function storeMsg(inner,m,key){

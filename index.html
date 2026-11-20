@@ -4,8 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap">
-<style>
-/* Layout: bright single-theme page. Sticky clock bar, then two big panels (customer's LINE phone, owner console).
+<style>/* Layout: bright single-theme page. Sticky clock bar, then two big panels (customer's LINE phone, owner console).
    A guided tour dims the page, spotlights one thing at a time and explains it in a large bottom card. */
 :root{
   color-scheme:light;
@@ -76,69 +75,15 @@ body.touring .app{padding-block-end:340px}
 .cnav button.on{color:var(--cust);font-weight:700}
 .badge{position:absolute;top:5px;margin-left:2px;background:var(--bad);color:#ffffff;font-size:11px;font-weight:700;border-radius:999px;padding:0 6px;line-height:18px}
 
-/* chat */
-.chat{background:var(--chat-bg);min-height:100%;padding:14px 12px;display:flex;flex-direction:column;gap:12px}
-.msg{display:flex;gap:8px;align-items:flex-start;max-width:92%}
-.msg.me{align-self:flex-end;flex-direction:row-reverse}
-.bwrap{display:flex;flex-direction:column;gap:3px;min-width:0}
-.msg.me .bwrap{align-items:flex-end}
-.bubble{background:var(--bubble);color:var(--ink);border-radius:16px;padding:11px 13px;white-space:pre-line;overflow-wrap:anywhere}
-.msg.me .bubble{background:var(--bubble-me);color:var(--bubble-me-ink)}
-.meta{font-size:11px;color:var(--chat-meta)}
-.bubble h4{margin:0 0 6px;font-size:16px}
-.bact{display:flex;flex-direction:column;gap:6px;margin-top:10px;white-space:normal}
-.bbtn{border:0;border-radius:10px;padding:11px;background:var(--surface-2);color:var(--ink);font-weight:500;font-size:15px}
-.bbtn.go{background:var(--cust);color:#ffffff;font-weight:700}
-.bbtn:disabled{opacity:.55;cursor:not-allowed}
-.sched{display:flex;flex-direction:column;gap:8px;margin-top:8px;white-space:normal}
-.srow{border:1px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px}
-.srow b{font-size:15px}
-.srow small{color:var(--muted);font-size:12px}
-.answer{margin-top:8px;font-size:14px;font-weight:700;white-space:normal;color:var(--cust)}
-
 /* order screen */
 .pad{padding:14px;display:flex;flex-direction:column;gap:12px}
-.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--surface-2);border-radius:12px;padding:4px;gap:4px}
-.seg button{border:0;background:transparent;border-radius:9px;padding:9px 4px;font-size:14px;color:var(--muted)}
-.seg button.on{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.12)}
-.addr{font-size:13px;color:var(--muted);margin:0}
-.blist{display:flex;flex-direction:column;gap:8px}
-.batch{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 8px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-align:left;width:100%}
-.batch .bn{font-weight:700;font-size:16px}
-.batch .bt{font-family:var(--font-num);font-size:13px;color:var(--muted);margin-left:6px}
-.batch .left{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
-.batch .left b{color:var(--ink);font-size:16px}
-.batch.sel{border-color:var(--cust);box-shadow:0 0 0 3px var(--cust-soft)}
-.batch.off{background:var(--surface-2)}
-.meter{grid-column:1/-1;height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
-.batch.off .meter{background:var(--line)}
-.meter i{display:block;height:100%;background:var(--ember)}
-.meter.full i{background:var(--muted)}
 .chip{display:inline-block;font-size:13px;font-weight:500;padding:2px 10px;border-radius:999px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
 .chip.ok{background:var(--ok-soft);color:var(--ok)}
 .chip.warn{background:var(--warn-soft);color:var(--warn)}
 .chip.bad{background:var(--bad-soft);color:var(--bad)}
 .chip.ember{background:var(--ember-soft);color:var(--ember)}
-.form{border:2px solid var(--cust);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:12px;background:var(--surface)}
-.frow{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.frow .lab{min-width:0;font-weight:500}
-.frow .lab small{display:block;color:var(--muted);font-size:12px;font-weight:400}
-.stepper{display:flex;align-items:center;gap:6px}
-.stepper button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);font-weight:700;font-size:18px}
-.stepper span{min-width:24px;text-align:center;font-family:var(--font-num);font-weight:700;font-size:18px}
-.bound{font-size:13px;color:var(--muted)}
-.bound b{color:var(--ok)}
-.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);padding-top:8px}
-.total b{font-family:var(--font-num);font-size:22px}
-.subbtn{background:var(--cust);border:0;color:#ffffff;font-weight:700;border-radius:12px;padding:13px;font-size:17px}
 .notice{border-radius:12px;padding:12px 14px;font-size:15px}
 .notice.bad{background:var(--bad-soft);color:var(--bad)}
-.ocard{border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px}
-.ocard .h{display:flex;justify-content:space-between;gap:8px;align-items:center}
-.ocard .h b{font-size:16px}
-.ocard small{color:var(--muted);font-size:13px}
-.ocard .acts{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.ocard select{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 8px;font-size:14px}
 .empty{text-align:center;color:var(--muted);padding:40px 16px;font-size:15px}
 .hint{font-size:14px;color:var(--muted);margin:0}
 
@@ -160,10 +105,6 @@ body.touring .app{padding-block-end:340px}
 .stat.alert b{color:var(--bad)}
 .sec{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:4px}
 .sec h3{margin:0;font-size:16px}
-.bcard{border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 8px;align-items:center}
-.bcard .cnt{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted)}
-.bcard .cnt b{color:var(--ink);font-family:var(--font-num)}
-.bcard .cnt .bad b{color:var(--bad)}
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
 table{width:100%;border-collapse:collapse;font-size:15px}
 th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
@@ -195,10 +136,6 @@ tfoot td{font-weight:700;background:var(--surface-2)}
 #spot{position:fixed;z-index:30;border-radius:16px;pointer-events:none;box-shadow:0 0 0 4px var(--ember),0 0 0 9999px var(--dim);transition:top .25s,left .25s,width .25s,height .25s}
 #spot.shake{animation:shake .45s}
 @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
-@media (prefers-reduced-motion:no-preference){
-  #spot::after{content:"";position:absolute;inset:-4px;border-radius:18px;border:4px solid var(--ember);animation:pulse 1.6s ease-out infinite}
-}
-@media (prefers-reduced-motion:reduce){#spot{transition:none}#spot.shake{animation:none}}
 @keyframes pulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.06)}}
 .sheet{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));width:min(700px,calc(100% - 24px));background:var(--surface);border-radius:20px;box-shadow:0 24px 60px -12px rgba(0,0,0,.5);padding:18px 22px 20px;z-index:40;display:flex;flex-direction:column;gap:10px}
 .sh-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
@@ -233,6 +170,10 @@ tfoot td{font-weight:700;background:var(--surface-2)}
 .mnote{font-size:14px;color:var(--muted);margin:0;text-align:center}
 
 #toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translateX(-50%);background:var(--ink);color:var(--surface);padding:12px 18px;border-radius:12px;font-size:15px;z-index:60;max-width:calc(100% - 32px);box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+@media (prefers-reduced-motion:no-preference){
+  #spot::after{content:"";position:absolute;inset:-4px;border-radius:18px;border:4px solid var(--ember);animation:pulse 1.6s ease-out infinite}
+}
+@media (prefers-reduced-motion:reduce){#spot{transition:none}#spot.shake{animation:none}}
 
 @media (max-width:860px){
   .viewtabs{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;background:var(--surface-2);border-radius:12px;padding:4px;margin-top:12px}
@@ -257,6 +198,64 @@ tfoot td{font-weight:700;background:var(--surface-2)}
   .mcard h2{font-size:23px}
   .mlist li{font-size:16px}
 }
+
+/* chat */
+.chat{background:var(--chat-bg);min-height:100%;padding:14px 12px;display:flex;flex-direction:column;gap:12px}
+.msg{display:flex;gap:8px;align-items:flex-start;max-width:92%}
+.msg.me{align-self:flex-end;flex-direction:row-reverse}
+.bwrap{display:flex;flex-direction:column;gap:3px;min-width:0}
+.msg.me .bwrap{align-items:flex-end}
+.bubble{background:var(--bubble);color:var(--ink);border-radius:16px;padding:11px 13px;white-space:pre-line;overflow-wrap:anywhere}
+.msg.me .bubble{background:var(--bubble-me);color:var(--bubble-me-ink)}
+.meta{font-size:11px;color:var(--chat-meta)}
+.bubble h4{margin:0 0 6px;font-size:16px}
+.bact{display:flex;flex-direction:column;gap:6px;margin-top:10px;white-space:normal}
+.bbtn{border:0;border-radius:10px;padding:11px;background:var(--surface-2);color:var(--ink);font-weight:500;font-size:15px}
+.bbtn.go{background:var(--cust);color:#ffffff;font-weight:700}
+.bbtn:disabled{opacity:.55;cursor:not-allowed}
+.sched{display:flex;flex-direction:column;gap:8px;margin-top:8px;white-space:normal}
+.srow{border:1px solid var(--line);border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:6px}
+.srow b{font-size:15px}
+.srow small{color:var(--muted);font-size:12px}
+.answer{margin-top:8px;font-size:14px;font-weight:700;white-space:normal;color:var(--cust)}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--surface-2);border-radius:12px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:9px 4px;font-size:14px;color:var(--muted)}
+.seg button.on{background:var(--surface);color:var(--ink);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.addr{font-size:13px;color:var(--muted);margin:0}
+.blist{display:flex;flex-direction:column;gap:8px}
+.batch{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 8px;align-items:center;padding:12px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-align:left;width:100%}
+.batch .bn{font-weight:700;font-size:16px}
+.batch .bt{font-family:var(--font-num);font-size:13px;color:var(--muted);margin-left:6px}
+.batch .left{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.batch .left b{color:var(--ink);font-size:16px}
+.batch.sel{border-color:var(--cust);box-shadow:0 0 0 3px var(--cust-soft)}
+.batch.off{background:var(--surface-2)}
+.meter{grid-column:1/-1;height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.batch.off .meter{background:var(--line)}
+.meter i{display:block;height:100%;background:var(--ember)}
+.meter.full i{background:var(--muted)}
+.form{border:2px solid var(--cust);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:12px;background:var(--surface)}
+.frow{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.frow .lab{min-width:0;font-weight:500}
+.frow .lab small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface-2);font-weight:700;font-size:18px}
+.stepper span{min-width:24px;text-align:center;font-family:var(--font-num);font-weight:700;font-size:18px}
+.bound{font-size:13px;color:var(--muted)}
+.bound b{color:var(--ok)}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);padding-top:8px}
+.total b{font-family:var(--font-num);font-size:22px}
+.subbtn{background:var(--cust);border:0;color:#ffffff;font-weight:700;border-radius:12px;padding:13px;font-size:17px}
+.ocard{border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.ocard .h{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.ocard .h b{font-size:16px}
+.ocard small{color:var(--muted);font-size:13px}
+.ocard .acts{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.ocard select{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 8px;font-size:14px}
+.bcard{border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 8px;align-items:center}
+.bcard .cnt{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted)}
+.bcard .cnt b{color:var(--ink);font-family:var(--font-num)}
+.bcard .cnt .bad b{color:var(--bad)}
 </style>
 
 <div class="app">
@@ -278,185 +277,190 @@ tfoot td{font-weight:700;background:var(--surface-2)}
 <div id="modal" class="modal" hidden></div>
 <div id="toast" hidden></div>
 
-<script>
-(function(){
+<script>(function(){
 'use strict';
-var STORE='大仁哥碳烤蔗香脆皮桶仔雞';
-var PRICE={chicken:499,kimchi:200,essence:100};
-var ME_NAME='示範客人', BAD_NAME='陳○豪';
-var NAMES=['林○宏','黃○雯','張○豪','李○君','吳○廷','蔡○芬','周○安','鄭○琳','謝○翔','洪○如','邱○傑','賴○萱','徐○誠','何○儀','簡○達','葉○穎','方○宇','潘○慈','杜○恩','范○婷','宋○霖','高○璇','羅○成','石○瑜','戴○偉','孫○德','馬○蓉','朱○恆','胡○昀','郭○萍','曹○嘉','袁○豪','許○甄','鍾○翰','彭○妤','蕭○群','田○綸','董○晴','溫○川','傅○芸','沈○凱','韓○薇','唐○軒','馮○雅','程○廷','魏○璋','呂○蓁','蘇○男','丁○靜','游○哲','江○萱','余○仁','卓○妍','藍○安','柯○宸'];
-var SESS={
+// 客戶設定：複製本檔新增店家。app 指定應用模組；title/brandTitle/subtitle 與 labels 控制頁面文字。
+// store、sessions、batchSchedule、main、addons、scenario 與 initialData 控制店家資料及假資料劇本。
+// tour(ctx) 是導覽步驟；ctx.S() 每次取得最新狀態，供「上一步」還原後使用。modal(kind) 提供開場與結束內容。
+var DEMO_CONFIG = {
+  app: 'preorder',
+  title: '桶仔雞預訂示範',
+  brandTitle: '桶仔雞預訂系統・示範',
+  subtitle: '資料都是假的，隨便按不會壞。',
+  labels: {
+    viewAria: '切換畫面', custAria: '客人的手機', ownerAria: '老闆的後台',
+    custRole: '客人', custLabel: '客人的手機', custNote: '（用平常的 LINE）',
+    ownerRole: '老闆', ownerLabel: '老闆的後台', ownerNote: '（手機、平板都能開）',
+    clock: '示範時鐘', viewTabs: {cust:'客人的手機',owner:'老闆的後台'},
+    who: {c:'客人的手機',o:'老闆的後台',t:'示範時鐘'}
+  },
+  store: '大仁哥碳烤蔗香脆皮桶仔雞',
+  avatar: '雞',
+  main: {name:'脆皮雞全雞',short:'雞',price:499,unit:'隻',prep:'脆皮雞'},
+  addons: {
+    kimchi:{name:'黃金泡菜',short:'泡菜',price:200,unit:'份',detail:'500g $200',prep:'泡菜',phone:true},
+    essence:{name:'精燉滴雞精',short:'滴雞精',price:100,unit:'包',detail:'1 包 $100',prep:'滴雞精',phone:false}
+  },
+  batchUnit: '爐',
+  batchExtraName: '加開爐 ',
+  batchPrepLabel: '爐次',
+  scheduleTitle: '本週巡迴行程',
+  scheduleMenu: '脆皮雞全雞 $499・黃金泡菜 500g $200・滴雞精 1 包 $100',
+  chatTime: '11/19 20:00',
+  welcomeChat: '嗨！直接點下面的場次就能預訂。\n取餐前 1 小時會用 LINE 提醒你，按一下「確認會到」就好。',
+  meName: '示範客人', badName: '陳○豪',
+  names: ['林○宏','黃○雯','張○豪','李○君','吳○廷','蔡○芬','周○安','鄭○琳','謝○翔','洪○如','邱○傑','賴○萱','徐○誠','何○儀','簡○達','葉○穎','方○宇','潘○慈','杜○恩','范○婷','宋○霖','高○璇','羅○成','石○瑜','戴○偉','孫○德','馬○蓉','朱○恆','胡○昀','郭○萍','曹○嘉','袁○豪','許○甄','鍾○翰','彭○妤','蕭○群','田○綸','董○晴','溫○川','傅○芸','沈○凱','韓○薇','唐○軒','馮○雅','程○廷','魏○璋','呂○蓁','蘇○男','丁○靜','游○哲','江○萱','余○仁','卓○妍','藍○安','柯○宸'],
+  sessions: {
   fri:{label:'11/27（五）三重',short:'11/27 三重',place:'三重 新寶月子中心',addr:'新北市三重區集賢路207號（新寶月子中心）',ended:true},
   sat:{label:'11/28（六）林口',short:'11/28 林口',place:'林口 立德公園對面',addr:'新北市林口區仁愛二路（立德公園對面）'},
   sun:{label:'11/29（日）內湖',short:'11/29 內湖',place:'內湖 義居雅舍',addr:'臺北市內湖區西康里內湖路一段203巷28號（義居雅舍）'}
+},
+  sessionOrder: ['fri','sat','sun'],
+  orderableSessions: ['sat','sun'],
+  batchSchedule: [['第一爐',720],['第二爐',795],['第三爐',870],['第四爐',945],['第五爐',1020],['第六爐',1100]],
+  batchDuration:20, batchCapacity:20, extraBatchCapacity:10, extraBatchSpacing:60,
+  batchDays:[{key:'sat',prefix:'b',idOffset:0,minuteOffset:0},{key:'sun',prefix:'s',idOffset:1,minuteOffset:1440}],
+  initialData: {now:880,seed:7,ownerSession:'sat',orderSession:'sat',listBatch:'b3',phoneBatch:'b4',pushesExtra:7,credits:{'陳○豪':2,'王○傑':1}},
+  scenario: [
+    {batch:'b0',total:20,status:'picked',lastStatus:'noshow',creditLast:true},
+    {batch:'b1',total:18,status:'picked'},
+    {batch:'b2',total:14,status:'picked',penultimate:{status:'pending',sim:{r1:'none',r2:'none',come:false}},last:{status:'confirmed',sim:{come:false}}},
+    {batch:'b3',total:12,status:'pending',special:{1:{r1:'none',r2:'confirm'},2:{r1:'none',r2:'none',come:false}}},
+    {batch:'b4',total:20,first:2,status:'pending',special:{0:{r1:'cancel'},3:{r1:'none',r2:'none',come:false},5:{come:false}}},
+    {batch:'b5',total:7,status:'pending',special:{1:{r1:'none',r2:'confirm'}}},
+    {batch:'s1',randomTotal:true,status:'pending'},
+    {batch:'s2',randomTotal:true,status:'pending'},
+    {batch:'s3',randomTotal:true,status:'pending'},
+    {batch:'s4',randomTotal:true,status:'pending'},
+    {batch:'s5',randomTotal:true,status:'pending'},
+    {batch:'s6',randomTotal:true,status:'pending'}
+  ],
+  seedLog: function(ctx){
+    var l0=ctx.lineCount('b0'),l1=ctx.lineCount('b1'),l2=ctx.lineCount('b2'),first=ctx.first;
+    ctx.addLog(660,'remind','第一爐 取餐提醒：傳了 '+l0+' 則 LINE，線上預訂截止');
+    ctx.addLog(735,'remind','第二爐 取餐提醒：傳了 '+l1+' 則 LINE，線上預訂截止');
+    ctx.addLog(750,'noshow','第一爐 時間到沒來拿：1 筆（'+first.name+' '+first.qty+' 隻）→ 讓給現場客人');
+    ctx.addLog(810,'remind','第三爐 取餐提醒：傳了 '+l2+' 則 LINE，線上預訂截止');
+    ctx.addLog(825,'pick','第二爐 全部拿走了，沒有棄單');
+    ctx.addLog(855,'remind','第三爐 第二次提醒：傳了 4 則（只傳給還沒確認的人）');
+    ctx.addLog(875,'pick','第三爐 開始取餐');
+    return l0+l1+l2;
+  },
+  tour: function(ctx){
+return [
+  {who:'c',target:'#cust .lhead',title:'左邊是客人的手機',
+   text:'客人不用下載任何 App，用平常的 LINE 加你的官方帳號就能訂。右邊是老闆你的後台，用手機也能開。',cta:'好，繼續',
+   prep:function(){ctx.S().custScreen='chat';}},
+  {who:'c',target:'#cust [data-msg="schedule"] .srow:nth-child(2)',click:'#cust [data-act="open-order"][data-v="sat"]',title:'客人點「立即預訂」',
+   text:'你每週發的巡迴行程，客人在 LINE 裡點這個綠色按鈕就能訂。不用再留言「第二爐+1」，老闆也不用一則一則按讚確認。',cta:'幫我按「立即預訂」',
+   prep:function(){ctx.S().custScreen='chat';},run:function(){ctx.act('open-order','sat');},done:function(){return ctx.S().custScreen==='order';}},
+  {who:'c',target:'#cust .blist',click:'#cust [data-act="pick-batch"][data-v="b3"]',title:'每一爐還剩幾隻，一看就知道',
+   text:'橘色條是已經訂掉的。第五爐滿了就訂不了，不用再改貼文寫「已額滿」。我們幫客人選第四爐。',cta:'幫我選「第四爐」',
+   prep:function(){ctx.S().custScreen='order';ctx.S().orderSession='sat';ctx.S().selBatch=null;},run:function(){ctx.act('pick-batch','b3');},done:function(){return ctx.S().selBatch==='b3';}},
+  {who:'c',target:'#cust .form',click:'#cust .form',title:'選好數量，按「送出預訂」',
+   text:'客人選 2 隻雞、1 份泡菜。手機號碼第一次訂就綁好了，下次不用再填。',cta:'幫我選好並送出',
+   prep:function(){ctx.S().custScreen='order';ctx.S().orderSession='sat';if(ctx.S().selBatch!=='b3'){ctx.S().selBatch='b3';ctx.S().form={qty:1,kimchi:0,essence:0};}},
+   run:function(){ctx.S().form={qty:2,kimchi:1,essence:0};ctx.act('submit');},done:function(){return !!ctx.myOrder('b3');}},
+  {who:'o',target:'#owner .bcard[data-bid="b3"]',title:'老闆這邊，馬上就看到了',
+   text:'第四爐自動多了這 2 隻。往下還有「要準備多少」，雞、泡菜、滴雞精各要幾份，系統自動算好。',cta:'知道了，繼續',
+   prep:function(){ctx.S().ownerTab='overview';ctx.S().ownerSession='sat';}},
+  {who:'c',target:'#cust [data-bid="b4"]',click:'#cust [data-act="join-wait"][data-v="b4"]',title:'第五爐滿了？可以排候補',
+   text:'有人取消的時候，系統會自動用 LINE 通知排候補的客人，雞不會浪費。',cta:'幫我按「排候補」',
+   prep:function(){ctx.S().custScreen='order';ctx.S().orderSession='sat';ctx.S().form.qty=2;},run:function(){ctx.act('join-wait','b4');},
+   done:function(){return ctx.getB('b4').waitlist.some(function(w){return w.isMe;});}},
+  {who:'t',target:'#clockbox',title:'把時間快轉到下午 2:45',
+   text:'上面是示範用的時鐘。2:45 是第四爐取餐前 1 小時，系統會自動傳 LINE 提醒客人。',cta:'快轉到 14:45',
+   run:function(){ctx.advance(885);},done:function(){return ctx.S().now>=885;}},
+  {who:'c',target:'#cust [data-msg="reminder"]',click:'#cust [data-msg="reminder"] [data-act="r-confirm"]',title:'客人收到提醒，按「確認會到」',
+   text:'老闆不用一個一個打電話。沒按確認的，取餐前 15 分鐘系統會再提醒一次。',cta:'幫我按「確認會到」',
+   prep:function(){ctx.S().custScreen='chat';},run:function(){var o=ctx.myOrder('b3');if(o)ctx.act('r-confirm',o.id);},
+   done:function(){var o=ctx.myOrder('b3');return o&&o.status!=='pending';}},
+  {who:'o',target:'#owner .orow.mine',click:'#owner .orow.mine [data-act="o-pick"]',title:'客人來拿了，按「已取餐」',
+   text:'取餐名單照爐次排好，不用再翻留言對名字。這筆已經是「已確認」，客人來了按一下就好。',cta:'幫我按「已取餐」',
+   prep:function(){ctx.S().ownerTab='list';ctx.S().ownerSession='sat';ctx.S().listBatch='b3';},run:function(){var o=ctx.myOrder('b3');if(o)ctx.act('o-pick',o.id);},
+   done:function(){var o=ctx.myOrder('b3');return o&&o.status==='picked';}},
+  {who:'t',target:'#clockbox',title:'快轉到下午 4:00，有人取消了',
+   text:'4:00 是第五爐取餐前 1 小時。有一位客人收到提醒後按了「不能來」，空出 2 隻。',cta:'快轉到 16:00',
+   run:function(){ctx.advance(960);},done:function(){return ctx.S().now>=960;}},
+  {who:'c',target:'#cust [data-msg="offer"]',click:'#cust [data-msg="offer"] [data-act="offer-accept"]',title:'排候補的客人馬上收到通知',
+   text:'他在 10 分鐘內按「我要」，名額就是他的。老闆什麼都不用做。',cta:'幫我按「我要」',
+   prep:function(){ctx.S().custScreen='chat';},run:function(){ctx.act('offer-accept');},done:function(){return !!ctx.myOrder('b4');}},
+  {who:'t',target:'#clockbox',title:'快轉到下午 5:30',
+   text:'第五爐 5:00 到 5:20 取餐（每爐 20 分鐘）。過了 5:30 還沒來拿的，系統自動算棄單，名額讓給現場候補的客人。',cta:'快轉到 17:30',
+   run:function(){var o=ctx.myOrder('b4');if(o&&(o.status==='pending'||o.status==='confirmed'))o.status='picked';ctx.advance(1050);},done:function(){return ctx.S().now>=1050;}},
+  {who:'o',target:'#owner .bcard[data-bid="b4"]',title:'沒來拿的，系統自動處理',
+   text:function(){var x=ctx.bNoShow('b4');return '第五爐有 '+x.n+' 筆沒來拿，共 '+x.q+' 隻。系統已經算好，名額讓給現場客人，你不用在攤位一直等。';},cta:'繼續',
+   prep:function(){ctx.S().ownerTab='overview';ctx.S().ownerSession='sat';}},
+  {who:'o',target:'#creditlist',title:'誰常常不來拿，系統記得',
+   text:'第 1 次只提醒，滿 2 次自動暫停 LINE 預訂。不用老闆出面當壞人。',cta:'繼續',
+   prep:function(){ctx.S().ownerTab='credit';}},
+  {who:'c',target:'#cust .notice',title:'被暫停的客人，手機上看到這個',
+   text:'他還是可以打電話或來現場買。如果是熟客想給他機會，老闆在後台按「放他一馬」就好。',cta:'看完了',
+   prep:function(){ctx.S().identity='blocked';ctx.S().custScreen='order';ctx.S().orderSession='sat';ctx.S().selBatch=null;}}
+];
+  },
+  modal: function(kind){
+if(kind==='welcome'){
+    return '<div class="mcard" role="dialog" aria-labelledby="mt"><h2 id="mt">「訂了不來拿」的煩惱，交給系統</h2>'+
+      '<p class="lead">這是示範畫面，資料都是假的，隨便按不會壞。</p>'+
+      '<ol class="mlist"><li><span>1</span><div>客人用 LINE 訂，每一爐剩幾隻自動算<small>不用再數留言、改貼文</small></div></li>'+
+      '<li><span>2</span><div>取餐前 1 小時，自動傳 LINE 提醒<small>客人按「確認會到」，沒回再提醒一次</small></div></li>'+
+      '<li><span>3</span><div>時間到沒來拿，自動讓給現場客人<small>滿 2 次的客人，自動暫停 LINE 預訂</small></div></li></ol>'+
+      '<div class="mbtns"><button class="bigbtn go" data-tour="start">▶ 開始導覽（大約 3 分鐘）</button>'+
+      '<button class="bigbtn alt" data-tour="free">我想自己點點看</button></div>'+
+      '<p class="mnote">導覽中每一步都有大按鈕幫你按，跟著看就好。</p></div>';
+  }else{
+    return '<div class="mcard" role="dialog" aria-labelledby="mt"><h2 id="mt">導覽看完了</h2>'+
+      '<p class="lead">剛剛這一場，系統幫老闆做了這些事：</p>'+
+      '<ol class="mlist"><li><span>1</span><div>名額自動扣，不會超賣，也不用改貼文</div></li>'+
+      '<li><span>2</span><div>自動提醒客人，不用一個一個打電話</div></li>'+
+      '<li><span>3</span><div>有人取消，自動通知候補的人補上</div></li>'+
+      '<li><span>4</span><div>沒來拿的自動記錄，常犯的人自動暫停</div></li></ol>'+
+      '<div class="mbtns"><button class="bigbtn go" data-tour="free">我想自己點點看</button>'+
+      '<button class="bigbtn alt" data-tour="start">再看一次導覽</button></div></div>';
+  }
+
+  }
 };
-var STATUS={pending:['待確認','warn'],confirmed:['已確認','ok'],picked:['已取餐',''],noshow:['棄單','bad'],cancelled:['已取消','']};
 
-var S, seed, ni, toastTimer, lastChatLen=0;
-var tour={on:false,i:0,snaps:[],busy:false};
-
-function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+// 應用模組介面：register(app) 後 start() 會呼叫 init(cfg) 初始化，state() 回傳目前可變狀態，setState(s) 在導覽上一步還原。
+// renderPanels() 依原順序繪製客人與店家面板；act(a,v,f) 處理非共用動作；tick(m) 執行每分鐘模擬；events() 回傳未來事件陣列。
+// unread() 回傳未讀數；onChange(e) 更新表單並回傳是否需要重繪；onInput(e) 更新輸入；tourContext(engine) 回傳導覽可呼叫的方法。
+// scrollHints() 回傳 {chatLen,custScreen}；resetPushes()/newPushes() 管理本次快轉通知數。engine 只經此介面存取應用模組。
+var DemoEngine=(function(){
+var cfg=DEMO_CONFIG,app,toastTimer,lastChatLen=0;
+var tour={on:false,i:0,snaps:[],busy:false},TOUR=[];
 function fmt(m){m=((m%1440)+1440)%1440;var h=Math.floor(m/60),mm=m%60;return (h<10?'0':'')+h+':'+(mm<10?'0':'')+mm;}
 function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-function getB(id){for(var i=0;i<S.batches.length;i++)if(S.batches[i].id===id)return S.batches[i];return null;}
-function getO(id){id=Number(id);for(var i=0;i<S.orders.length;i++)if(S.orders[i].id===id)return S.orders[i];return null;}
-function myOrder(bid){return S.orders.filter(function(o){return o.isMe&&o.batchId===bid&&o.status!=='cancelled';})[0];}
-function batchesOf(s){return S.batches.filter(function(b){return b.s===s;});}
-function ordersOf(bid){return S.orders.filter(function(o){return o.batchId===bid;});}
-function used(b){return ordersOf(b.id).reduce(function(a,o){return a+(o.status==='cancelled'?0:o.qty);},0);}
-function remaining(b){return Math.max(0,b.cap-used(b));}
-function meName(){return S.identity==='blocked'?BAD_NAME:ME_NAME;}
-function isBlocked(n){return (S.credits[n]||0)>=2&&!S.override[n];}
-function orderable(b){return S.now<b.start-60;}
-function credit(n){S.credits[n]=(S.credits[n]||0)+1;}
-function addLog(t,kind,text){S.log.push({t:t,kind:kind,text:text});}
-function items(o){var a=['雞 '+o.qty+' 隻'];if(o.kimchi)a.push('泡菜 '+o.kimchi+' 份');if(o.essence)a.push('滴雞精 '+o.essence+' 包');return a.join('・');}
-function bState(b){
-  var r=remaining(b);
-  if(S.now<b.start-60)return r>0?['可預訂','ok']:['已額滿','warn'];
-  if(S.now<b.start)return ['已截止・備料中',''];
-  if(S.now<=b.end+10)return ['取餐中','ember'];
-  return ['已結束',''];
-}
 function chip(p){return '<span class="chip '+p[1]+'">'+p[0]+'</span>';}
-
-function fill(total,first){var a=first?[first]:[],s=first||0;while(s<total){var q=Math.min(total-s,1+Math.floor(rnd()*3));a.push(q);s+=q;}return a;}
-function addSim(bid,qty,status,sim){
-  var src=sim?'line':(rnd()<.15?'phone':'line');
-  if(src==='phone'&&status==='pending')status='confirmed';
-  var o={id:S.nextId++,batchId:bid,name:NAMES[ni++%NAMES.length],phone4:String(1000+Math.floor(rnd()*9000)),qty:qty,
-    kimchi:rnd()<.3?1:0,essence:rnd()<.12?1:0,status:status,isMe:false,src:src,
-    sim:Object.assign({r1:'confirm',r2:'confirm',come:true},sim||{})};
-  S.orders.push(o);return o;
-}
-function pushChat(m){
-  m.id=S.nextMsg++;m.time=fmt(S.now);S.chat.push(m);
-  if(S.custScreen!=='chat')S.unread++;
-  if(m.tag==='push'||m.type==='reminder'||m.type==='offer')S.newPush++;
-  return m;
-}
-
-function init(){
-  seed=7;ni=0;lastChatLen=0;
-  S={now:880,identity:'normal',view:'cust',custScreen:'chat',orderSession:'sat',selBatch:null,form:{qty:1,kimchi:0,essence:0},
-    ownerSession:'sat',ownerTab:'overview',listBatch:'b3',orders:[],chat:[],log:[],pushes:0,credits:{},override:{},
-    offer:null,nextId:1,nextMsg:1,unread:0,newPush:0,po:{name:'',phone:'',batch:'b4',qty:1,kimchi:0},
-    batches:(function(){
-      var T=[['第一爐',720],['第二爐',795],['第三爐',870],['第四爐',945],['第五爐',1020],['第六爐',1100]],a=[];
-      T.forEach(function(t,i){a.push({id:'b'+i,s:'sat',name:t[0],start:t[1],end:t[1]+20,cap:20,waitlist:[]});});
-      T.forEach(function(t,i){a.push({id:'s'+(i+1),s:'sun',name:t[0],start:t[1]+1440,end:t[1]+1460,cap:20,waitlist:[]});});
-      return a;
-    })()
-  };
-  var q,n,first;
-  function lineCount(id){return ordersOf(id).filter(function(o){return o.src==='line';}).length;}
-  q=fill(20);q.forEach(function(x,i){var last=i===q.length-1;var o=addSim('b0',x,last?'noshow':'picked');if(last){credit(o.name);first=o;}});
-  fill(18).forEach(function(x){addSim('b1',x,'picked');});
-  q=fill(14);n=q.length;q.forEach(function(x,i){
-    if(i===n-1)addSim('b2',x,'confirmed',{come:false});
-    else if(i===n-2)addSim('b2',x,'pending',{r1:'none',r2:'none',come:false});
-    else addSim('b2',x,'picked');
-  });
-  q=fill(12);q.forEach(function(x,i){addSim('b3',x,'pending',i===1?{r1:'none',r2:'confirm'}:i===2?{r1:'none',r2:'none',come:false}:null);});
-  q=fill(20,2);q.forEach(function(x,i){addSim('b4',x,'pending',i===0?{r1:'cancel'}:i===3?{r1:'none',r2:'none',come:false}:i===5?{come:false}:null);});
-  q=fill(7);q.forEach(function(x,i){addSim('b5',x,'pending',i===1?{r1:'none',r2:'confirm'}:null);});
-  ['s1','s2','s3','s4','s5','s6'].forEach(function(id){fill(3+Math.floor(rnd()*7)).forEach(function(x){addSim(id,x,'pending');});});
-  S.credits[BAD_NAME]=2;S.credits['王○傑']=1;
-  var l0=lineCount('b0'),l1=lineCount('b1'),l2=lineCount('b2');
-  S.pushes=l0+l1+l2+7;
-  addLog(660,'remind','第一爐 取餐提醒：傳了 '+l0+' 則 LINE，線上預訂截止');
-  addLog(735,'remind','第二爐 取餐提醒：傳了 '+l1+' 則 LINE，線上預訂截止');
-  addLog(750,'noshow','第一爐 時間到沒來拿：1 筆（'+first.name+' '+first.qty+' 隻）→ 讓給現場客人');
-  addLog(810,'remind','第三爐 取餐提醒：傳了 '+l2+' 則 LINE，線上預訂截止');
-  addLog(825,'pick','第二爐 全部拿走了，沒有棄單');
-  addLog(855,'remind','第三爐 第二次提醒：傳了 4 則（只傳給還沒確認的人）');
-  addLog(875,'pick','第三爐 開始取餐');
-  S.chat.push({id:S.nextMsg++,type:'text',from:'store',tag:'push',time:'11/19 20:00',text:'嗨！直接點下面的場次就能預訂。\n取餐前 1 小時會用 LINE 提醒你，按一下「確認會到」就好。'});
-  S.chat.push({id:S.nextMsg++,type:'schedule',from:'store',tag:'push',time:'11/19 20:00'});
-}
-
-/* ---------- simulation ---------- */
-function tick(m){
-  S.batches.forEach(function(b){
-    if(b.s!=='sat')return;
-    var os=ordersOf(b.id),n=0;
-    if(m===b.start-60){
-      os.forEach(function(o){
-        if(o.status!=='pending'||o.src!=='line')return;n++;
-        if(o.isMe)pushChat({type:'reminder',orderId:o.id,round:1,from:'store'});
-        else if(o.sim.r1==='confirm')o.status='confirmed';
-        else if(o.sim.r1==='cancel'){o.status='cancelled';addLog(m,'cancel',o.name+' 收到提醒後取消 '+b.name+' '+o.qty+' 隻');release(b,o.qty,m);}
-      });
-      S.pushes+=n;addLog(m,'remind',b.name+' 取餐提醒：傳了 '+n+' 則 LINE，線上預訂截止');
-    }
-    if(m===b.start-15){
-      os.forEach(function(o){
-        if(o.status!=='pending'||o.src!=='line')return;n++;
-        if(o.isMe)pushChat({type:'reminder',orderId:o.id,round:2,from:'store'});
-        else if(o.sim.r2==='confirm')o.status='confirmed';
-      });
-      if(n){S.pushes+=n;addLog(m,'remind',b.name+' 第二次提醒：傳了 '+n+' 則（只傳給還沒確認的人）');}
-    }
-    if(m===b.start+5){
-      var q=0;
-      os.forEach(function(o){if(!o.isMe&&o.sim&&o.sim.come&&(o.status==='pending'||o.status==='confirmed')){o.status='picked';q+=o.qty;}});
-      addLog(m,'pick',b.name+' 開始取餐'+(q?'：已拿走 '+q+' 隻':''));
-    }
-    if(m===b.end+10){
-      var ns=os.filter(function(o){return o.status==='pending'||o.status==='confirmed';}),tq=0;
-      ns.forEach(function(o){
-        o.status='noshow';tq+=o.qty;credit(o.name);
-        if(o.isMe){pushChat({type:'text',from:'store',tag:'push',text:'你預訂的 '+b.name+'（'+o.qty+' 隻）已經過了取餐時間，系統記為沒來拿。\n累計 2 次會暫停 LINE 預訂，改用電話或現場購買。'});S.pushes++;}
-      });
-      if(ns.length)addLog(m,'noshow',b.name+' 時間到沒來拿：'+ns.length+' 筆共 '+tq+' 隻 → 讓給現場客人');
-      else addLog(m,'pick',b.name+' 全部拿走了，沒有棄單');
-    }
-  });
-  if(S.offer&&S.offer.expires===m){
-    S.chat.forEach(function(x){if(x.id===S.offer.msgId)x.answered='expired';});
-    addLog(m,'wait','候補通知 10 分鐘沒回覆，名額讓給現場');S.offer=null;
-  }
-}
-function release(b,qty,m){
-  var w=b.waitlist.shift();
-  if(!w){addLog(m,'wait',b.name+' 空出 '+qty+' 隻'+(m<b.start-60?'，回到 LINE 上可以訂':'，讓給現場客人'));return;}
-  var give=Math.min(w.qty,qty);
-  if(w.isMe){
-    var msg=pushChat({type:'offer',from:'store',batchId:b.id,qty:give,expires:m+10});
-    S.offer={msgId:msg.id,batchId:b.id,qty:give,expires:m+10,name:w.name};
-    S.pushes++;
-    addLog(m,'wait',b.name+' 空出 '+qty+' 隻 → 通知候補第 1 位（'+w.name+'），10 分鐘內回覆');
-  }else{
-    S.orders.push({id:S.nextId++,batchId:b.id,name:w.name,phone4:'0000',qty:give,kimchi:0,essence:0,status:'confirmed',isMe:false,src:'line',sim:{come:true}});
-    addLog(m,'wait',b.name+' 空出 '+qty+' 隻 → 候補 '+w.name+' 補上');
-  }
-}
 function upcoming(){
-  var ev=[];
-  batchesOf('sat').forEach(function(b){
-    [[b.start-60,'取餐提醒'],[b.start-15,'第二次提醒'],[b.start+5,'開始取餐'],[b.end+10,'判定沒來拿的']].forEach(function(p){
-      if(p[0]>S.now&&p[0]<=1439)ev.push({t:p[0],l:b.name+' '+p[1]});
-    });
-  });
-  if(S.offer&&S.offer.expires>S.now)ev.push({t:S.offer.expires,l:'候補通知到期'});
+  var ev=app.events();
   ev.sort(function(a,b){return a.t-b.t;});
   return ev;
 }
 function advance(to){
-  to=Math.min(to,1439);S.newPush=0;
-  for(var m=S.now+1;m<=to;m++){S.now=m;tick(m);}
+  var S=app.state();
+  to=Math.min(to,1439);app.resetPushes();
+  for(var m=S.now+1;m<=to;m++){S.now=m;app.tick(m);}
   S.now=to;
-  if(S.newPush&&!tour.on)toast('客人的手機收到 '+S.newPush+' 則新的 LINE 通知');
+  if(app.newPushes()&&!tour.on)toast('客人的手機收到 '+app.newPushes()+' 則新的 LINE 通知');
+}
+function act(a,v,f){
+  var S=app.state();
+  if(a==='time')advance(S.now+Number(v));
+  else if(a==='next'){var ev=upcoming();if(ev.length)advance(ev[0].t);}
+  else if(a==='view')S.view=v;
+  else app.act(a,v,f);
 }
 
-/* ---------- render: top ---------- */
 function renderTop(){
+  var S=app.state();
   var ev=upcoming(),nx=ev[0];
   var same=nx?ev.filter(function(e){return e.t===nx.t;}).map(function(e){return e.l;}).join('、'):'';
   document.getElementById('top').innerHTML=
-    '<div class="brand"><h1>桶仔雞預訂系統・示範</h1><p>資料都是假的，隨便按不會壞。</p></div>'+
+    '<div class="brand"><h1>'+cfg.brandTitle+'</h1><p>'+cfg.subtitle+'</p></div>'+
     '<div class="clockbox" id="clockbox">'+
-      '<div class="clock"><small>示範時鐘・'+SESS.sat.label+'</small><b>'+fmt(S.now)+'</b></div>'+
+      '<div class="clock"><small>'+cfg.labels.clock+'・'+cfg.sessions[cfg.batchDays[0].key].label+'</small><b>'+fmt(S.now)+'</b></div>'+
       '<button class="btn" data-act="time" data-v="30"'+(S.now>=1439?' disabled':'')+'>快轉 30 分</button>'+
       '<button class="btn primary" data-act="next"'+(nx?'':' disabled')+'>快轉到下一件事 ▸</button>'+
       '<span class="next">'+(nx?'下一件事：<b class="num">'+fmt(nx.t)+'</b> <b>'+esc(same)+'</b>':'今天的事都跑完了')+'</span>'+
@@ -464,377 +468,44 @@ function renderTop(){
     (tour.on?'':'<button class="btn tourbtn" data-tour="start">▶ 從頭看導覽</button>');
 }
 function renderViewTabs(){
-  var t=[['cust','客人的手機'],['owner','老闆的後台']];
+  var S=app.state();
+  var t=[['cust',cfg.labels.viewTabs.cust],['owner',cfg.labels.viewTabs.owner]];
   document.getElementById('viewtabs').innerHTML=t.map(function(x){
-    var b=(x[0]==='cust'&&S.unread&&S.view!=='cust')?'<span class="badge">'+S.unread+'</span>':'';
+    var b=(x[0]==='cust'&&app.unread()&&S.view!=='cust')?'<span class="badge">'+app.unread()+'</span>':'';
     return '<button data-act="view" data-v="'+x[0]+'" class="'+(S.view===x[0]?'on':'')+'">'+x[1]+b+'</button>';
   }).join('');
   document.getElementById('stage').setAttribute('data-view',S.view);
 }
 
-/* ---------- render: customer ---------- */
-function renderCust(){
-  var body='';
-  if(S.custScreen==='chat'){S.unread=0;body=chatView();}
-  else if(S.custScreen==='order')body=orderView();
-  else body=mineView();
-  var nav=[['chat','聊天'],['order','訂購'],['mine','我的訂單']].map(function(x){
-    var b=(x[0]==='chat'&&S.unread)?'<span class="badge">'+S.unread+'</span>':'';
-    return '<button data-act="cust" data-v="'+x[0]+'" class="'+(S.custScreen===x[0]?'on':'')+'">'+x[1]+b+'</button>';
-  }).join('');
-  document.getElementById('cust').innerHTML='<div class="sbar"><span class="num">'+fmt(S.now)+'</span><span>5G ▮▮▮</span></div>'+
-    '<div class="lhead"><span class="av">雞</span><span class="t"><b>'+STORE+'</b><span>LINE 官方帳號（示範畫面）</span></span><span class="lpill">LINE</span></div>'+
-    '<div class="scroll" data-scroll="cust-'+S.custScreen+'">'+body+'</div><nav class="cnav">'+nav+'</nav>';
-}
-function storeMsg(inner,m,key){
-  var tag=m.tag==='reply'?'回覆訊息・免費':'主動通知・算在 LINE 方案則數';
-  return '<div class="msg"'+(key?' data-msg="'+key+'"':'')+'><span class="av">雞</span><div class="bwrap"><div class="bubble">'+inner+'</div><span class="meta">'+esc(m.time)+'・'+tag+'</span></div></div>';
-}
-function chatView(){
-  return '<div class="chat">'+S.chat.map(function(m){
-    if(m.type==='schedule'){
-      var rows=['fri','sat','sun'].map(function(k){
-        var s=SESS[k];
-        return '<div class="srow"><b>'+s.label+'</b><small>'+s.addr+'</small>'+
-          (s.ended?'<button class="bbtn" disabled>已結束</button>':'<button class="bbtn go" data-act="open-order" data-v="'+k+'">立即預訂</button>')+'</div>';
-      }).join('');
-      return storeMsg('<h4>本週巡迴行程</h4>脆皮雞全雞 $499・黃金泡菜 500g $200・滴雞精 1 包 $100<div class="sched">'+rows+'</div>',m,'schedule');
-    }
-    if(m.type==='text'){
-      if(m.from==='me')return '<div class="msg me"><div class="bwrap"><div class="bubble">'+esc(m.text)+'</div><span class="meta">'+m.time+'</span></div></div>';
-      return storeMsg(esc(m.text),m);
-    }
-    if(m.type==='reminder'){
-      var o=getO(m.orderId),b=getB(o.batchId),foot;
-      if(o.status==='pending')foot='<div class="bact"><button class="bbtn go" data-act="r-confirm" data-v="'+o.id+'">確認會到</button><button class="bbtn" data-act="my-cancel" data-v="'+o.id+'">不能來，取消訂單</button></div>';
-      else foot='<div class="answer">'+({confirmed:'✓ 已確認，等你來拿',cancelled:'已取消，名額讓給別人了',picked:'✓ 已取餐，謝謝光臨',noshow:'時間過了沒來拿'})[o.status]+'</div>';
-      return storeMsg('<h4>'+(m.round===1?'⏰ 取餐提醒':'⏰ 再提醒一次：還沒收到你的確認')+'</h4>'+b.name+'　'+fmt(b.start)+'–'+fmt(b.end)+'\n'+SESS[b.s].place+'\n'+items(o)+'\n\n會準時來拿嗎？請按下面的按鈕。'+foot,{time:m.time,tag:'push'},'reminder');
-    }
-    if(m.type==='offer'){
-      var bb=getB(m.batchId),f;
-      if(m.answered==='accepted')f='<div class="answer">✓ 名額保留給你了</div>';
-      else if(m.answered==='expired')f='<div class="answer">超過 10 分鐘，名額讓給現場客人了</div>';
-      else f='<div class="bact"><button class="bbtn go" data-act="offer-accept">我要這 '+m.qty+' 隻</button></div>';
-      return storeMsg('<h4>🔔 候補通知</h4>'+bb.name+' 有人取消，空出 '+m.qty+' 隻。\n請在 '+fmt(m.expires)+' 前按下面的按鈕，超過就讓給下一位。'+f,{time:m.time,tag:'push'},'offer');
-    }
-    return '';
-  }).join('')+'</div>';
-}
-function orderView(){
-  var sk=S.orderSession,sess=SESS[sk],name=meName();
-  var h='<div class="pad"><div class="seg">'+['sat','sun'].map(function(k){
-    return '<button data-act="osess" data-v="'+k+'" class="'+(sk===k?'on':'')+'">'+SESS[k].short+'</button>';
-  }).join('')+'</div><p class="addr">📍 '+sess.addr+'</p>';
-  if(isBlocked(name)){
-    return h+'<div class="notice bad"><b>暫停 LINE 預訂</b><br>你已經有 '+S.credits[name]+' 次訂了沒來拿，系統暫停你的 LINE 預訂。<br>還是可以打電話預訂，或到攤位現場買。</div>'+
-      '<button class="btn small" data-act="identity" data-v="normal">切回一般客人</button></div>';
-  }
-  h+='<div class="blist">'+batchesOf(sk).map(function(b){
-    var r=remaining(b),st=bState(b),pct=Math.round(used(b)/b.cap*100),can=orderable(b)&&r>0;
-    var waiting=b.waitlist.some(function(w){return w.isMe;}),tail='';
-    if(orderable(b)&&r===0)tail=waiting?'<span class="chip ember">你在候補名單上</span>':'<button class="btn small" data-act="join-wait" data-v="'+b.id+'">排候補</button>';
-    var inner='<span><span class="bn">'+b.name+'</span><span class="bt">'+fmt(b.start)+'–'+fmt(b.end)+'</span></span>'+chip(st)+
-      '<span class="meter'+(r===0?' full':'')+'"><i style="width:'+pct+'%"></i></span>'+
-      '<span class="left"><span>'+(r>0?'還剩 <b class="num">'+r+'</b> 隻':'全部 '+b.cap+' 隻都訂完了')+'</span>'+tail+'</span>';
-    if(can)return '<button class="batch'+(S.selBatch===b.id?' sel':'')+'" data-act="pick-batch" data-v="'+b.id+'">'+inner+'</button>';
-    return '<div class="batch off" data-bid="'+b.id+'">'+inner+'</div>';
-  }).join('')+'</div>';
-  var b=getB(S.selBatch);
-  if(b&&b.s===sk&&orderable(b)){
-    var f=S.form,max=Math.min(5,remaining(b)),tot=f.qty*PRICE.chicken+f.kimchi*PRICE.kimchi+f.essence*PRICE.essence;
-    h+='<div class="form"><b>'+b.name+'　'+fmt(b.start)+'–'+fmt(b.end)+'</b>'+
-      stepRow('脆皮雞全雞','$499・這爐最多再訂 '+max+' 隻','qty',f.qty)+
-      stepRow('黃金泡菜','500g $200','kimchi',f.kimchi)+
-      stepRow('精燉滴雞精','1 包 $100','essence',f.essence)+
-      '<div class="bound">取餐人：'+name+'　手機 0912-***-678 <b>✓ 已綁定</b></div>'+
-      '<div class="total"><span>合計（現場付款）</span><b>$'+tot.toLocaleString()+'</b></div>'+
-      '<button class="subbtn" data-act="submit">送出預訂</button></div>';
-  }else{
-    h+='<p class="hint">點一個「可預訂」的爐次開始訂。取餐前 1 小時截止。</p>';
-  }
-  return h+'</div>';
-}
-function stepRow(label,sub,field,val){
-  return '<div class="frow"><span class="lab">'+label+'<small>'+sub+'</small></span><span class="stepper">'+
-    '<button data-act="step" data-f="'+field+'" data-v="-1" aria-label="減少'+label+'">−</button><span>'+val+'</span>'+
-    '<button data-act="step" data-f="'+field+'" data-v="1" aria-label="增加'+label+'">＋</button></span></div>';
-}
-function mineView(){
-  var mine=S.orders.filter(function(o){return o.isMe;}).slice().reverse();
-  var waits=[];S.batches.forEach(function(b){b.waitlist.forEach(function(w){if(w.isMe)waits.push({b:b,w:w});});});
-  if(!mine.length&&!waits.length)return '<div class="empty">還沒有訂單。<br>到「訂購」選一爐試試看。</div>';
-  var h='<div class="pad">';
-  waits.forEach(function(x){h+='<div class="ocard"><div class="h"><b>'+x.b.name+' '+fmt(x.b.start)+'</b><span class="chip ember">候補中</span></div><small>'+SESS[x.b.s].label+'・想要 '+x.w.qty+' 隻</small><small>有人取消會用 LINE 通知你，10 分鐘內回覆就是你的。</small></div>';});
-  mine.forEach(function(o){
-    var b=getB(o.batchId),act='';
-    if((o.status==='pending'||o.status==='confirmed')&&S.now<b.start){
-      act+='<button class="btn small" data-act="my-cancel" data-v="'+o.id+'">取消</button>';
-      if(orderable(b)){
-        var opts=batchesOf(b.s).filter(function(x){return x.id!==b.id&&orderable(x)&&remaining(x)>=o.qty;});
-        if(opts.length)act+='<select id="chg-'+o.id+'" aria-label="改到哪一爐">'+opts.map(function(x){return '<option value="'+x.id+'">'+x.name+' '+fmt(x.start)+'</option>';}).join('')+'</select><button class="btn small" data-act="my-change" data-v="'+o.id+'">改爐</button>';
-      }
-    }
-    h+='<div class="ocard"><div class="h"><b>'+b.name+' '+fmt(b.start)+'–'+fmt(b.end)+'</b>'+chip(STATUS[o.status])+'</div>'+
-      '<small>'+SESS[b.s].label+'</small><small>'+items(o)+'</small>'+(act?'<div class="acts">'+act+'</div>':'')+'</div>';
-  });
-  return h+'<p class="hint">客人自己改爐、取消，不用再留言「改第三爐」。</p></div>';
-}
-
-/* ---------- render: owner ---------- */
-function renderOwner(){
-  var sk=S.ownerSession;
-  var tabs=[['overview','總覽'],['list','取餐名單'],['phone','電話代訂'],['credit','客人信用'],['log','系統紀錄']];
-  var body=S.ownerTab==='overview'?ownOverview(sk):S.ownerTab==='list'?ownList(sk):S.ownerTab==='phone'?ownPhone(sk):S.ownerTab==='credit'?ownCredit():ownLog();
-  document.getElementById('owner').innerHTML=
-    '<div class="ohead"><b>店家後台</b><select id="osess" data-change="osess" aria-label="場次">'+
-      ['sat','sun'].map(function(k){return '<option value="'+k+'"'+(sk===k?' selected':'')+'>'+SESS[k].label+'</option>';}).join('')+
-    '</select></div>'+
-    '<div class="otabs">'+tabs.map(function(t){return '<button class="otab'+(S.ownerTab===t[0]?' on':'')+'" data-act="otab" data-v="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>'+
-    '<div class="scroll" data-scroll="owner-'+S.ownerTab+'"><div class="pad">'+body+'</div></div>';
-}
-function sumBy(os,st,f){return os.reduce(function(a,o){return a+((st.indexOf(o.status)>=0)?o[f||'qty']:0);},0);}
-var LIVE=['pending','confirmed','picked','noshow'];
-function ownOverview(sk){
-  var os=S.orders.filter(function(o){return getB(o.batchId).s===sk;});
-  var booked=sumBy(os,LIVE),picked=sumBy(os,['picked']),ns=sumBy(os,['noshow']);
-  var h='<div class="stats">'+
-    '<div class="stat"><small>已預訂</small><b>'+booked+'<em>隻</em></b></div>'+
-    '<div class="stat"><small>已拿走</small><b>'+picked+'<em>隻</em></b></div>'+
-    '<div class="stat'+(ns?' alert':'')+'"><small>沒來拿（已讓給現場）</small><b>'+ns+'<em>隻</em></b></div>'+
-    '<div class="stat"><small>今天傳的 LINE 通知</small><b>'+(sk==='sat'?S.pushes:0)+'<em>則</em></b></div></div>';
-  h+='<div class="sec"><h3>每一爐的狀況</h3><button class="btn small" data-act="add-batch">＋ 加開一爐</button></div>';
-  batchesOf(sk).forEach(function(b){
-    var bo=ordersOf(b.id),u=used(b),pct=Math.round(u/b.cap*100),nsq=sumBy(bo,['noshow']);
-    h+='<div class="bcard" data-bid="'+b.id+'"><span><b>'+b.name+'</b> <span class="num muted">'+fmt(b.start)+'–'+fmt(b.end)+'</span></span>'+chip(bState(b))+
-      '<span class="meter'+(u>=b.cap?' full':'')+'"><i style="width:'+pct+'%"></i></span>'+
-      '<span class="cnt"><span>已訂 <b>'+u+'/'+b.cap+'</b> 隻</span><span>待確認 <b>'+sumBy(bo,['pending'])+'</b></span><span>已確認 <b>'+sumBy(bo,['confirmed'])+'</b></span><span>已拿走 <b>'+sumBy(bo,['picked'])+'</b></span><span'+(nsq?' class="bad"':'')+'>沒來拿 <b>'+nsq+'</b></span>'+(b.waitlist.length?'<span>候補 <b>'+b.waitlist.length+'</b> 人</span>':'')+'</span></div>';
-  });
-  var rows='',t=[0,0,0];
-  batchesOf(sk).forEach(function(b){
-    var bo=ordersOf(b.id),c=sumBy(bo,LIVE),k=sumBy(bo,LIVE,'kimchi'),e=sumBy(bo,LIVE,'essence');
-    t[0]+=c;t[1]+=k;t[2]+=e;
-    rows+='<tr><td>'+b.name+' <span class="muted num">'+fmt(b.start)+'</span></td><td class="r">'+c+'</td><td class="r">'+k+'</td><td class="r">'+e+'</td></tr>';
-  });
-  h+='<div class="sec"><h3>要準備多少（自動加總）</h3></div><div class="tbl" id="prep"><table><thead><tr><th>爐次</th><th class="r">脆皮雞</th><th class="r">泡菜</th><th class="r">滴雞精</th></tr></thead><tbody>'+rows+
-    '</tbody><tfoot><tr><td>合計</td><td class="r">'+t[0]+'</td><td class="r">'+t[1]+'</td><td class="r">'+t[2]+'</td></tr></tfoot></table></div>';
-  return h;
-}
-function ownList(sk){
-  var bs=batchesOf(sk);
-  if(!getB(S.listBatch)||getB(S.listBatch).s!==sk)S.listBatch=bs[0].id;
-  var b=getB(S.listBatch),rank={pending:0,confirmed:1,noshow:2,picked:3,cancelled:4};
-  var os=ordersOf(b.id).slice().sort(function(x,y){return (y.isMe-x.isMe)||(rank[x.status]-rank[y.status]);});
-  var h='<div class="pills">'+bs.map(function(x){return '<button class="pill'+(x.id===b.id?' on':'')+'" data-act="lbatch" data-v="'+x.id+'">'+x.name+' '+fmt(x.start)+'</button>';}).join('')+'</div>';
-  h+='<p class="hint">'+chip(bState(b))+'　已訂 '+used(b)+'/'+b.cap+' 隻。客人來了按「已取餐」就好。</p>';
-  h+='<div class="olist">'+os.map(function(o){
-    var acts=(o.status==='pending'||o.status==='confirmed')?'<span class="acts"><button class="btn small primary" data-act="o-pick" data-v="'+o.id+'">已取餐</button><button class="btn small" data-act="o-noshow" data-v="'+o.id+'">沒來拿</button></span>':'';
-    return '<div class="orow'+(o.isMe?' mine':'')+'"><span><span class="nm">'+esc(o.name)+'</span>'+(o.isMe?'<span class="youtag">示範客人</span>':'')+'</span>'+chip(STATUS[o.status])+
-      '<small>'+items(o)+'・手機末 4 碼 '+(o.isMe?'5678':o.phone4)+'・'+(o.src==='phone'?'電話訂的':'LINE 訂的')+'</small>'+acts+'</div>';
-  }).join('')+'</div>';
-  if(b.waitlist.length)h+='<div class="sec"><h3>候補名單</h3></div><div class="olist">'+b.waitlist.map(function(w,i){return '<div class="orow"><span class="nm">'+(i+1)+'. '+esc(w.name)+'</span><span class="chip ember">想要 '+w.qty+' 隻</span></div>';}).join('')+'</div>';
-  return h;
-}
-function ownPhone(sk){
-  var p=S.po,bs=batchesOf(sk).filter(function(b){return S.now<=b.end;});
-  if(!bs.some(function(b){return b.id===p.batch;}))p.batch=bs.length?bs[0].id:'';
-  return '<p class="hint">不會用 LINE 的熟客打電話來，老闆直接在這裡幫他訂，名額一樣會扣。</p>'+
-    '<div class="grid2"><div class="field"><label for="po-name">客人稱呼</label><input id="po-name" data-bind="name" value="'+esc(p.name)+'" placeholder="例：王先生"></div>'+
-    '<div class="field"><label for="po-phone">手機</label><input id="po-phone" data-bind="phone" inputmode="tel" value="'+esc(p.phone)+'" placeholder="例：0911-222-333"></div></div>'+
-    '<div class="field"><label for="po-batch">哪一爐</label><select id="po-batch" data-bind="batch">'+bs.map(function(b){return '<option value="'+b.id+'"'+(p.batch===b.id?' selected':'')+'>'+b.name+' '+fmt(b.start)+'（還剩 '+remaining(b)+' 隻）</option>';}).join('')+'</select></div>'+
-    '<div class="grid2"><div class="field"><label for="po-qty">脆皮雞（隻）</label><input id="po-qty" data-bind="qty" type="number" min="1" max="10" value="'+p.qty+'"></div>'+
-    '<div class="field"><label for="po-kimchi">泡菜（份）</label><input id="po-kimchi" data-bind="kimchi" type="number" min="0" max="10" value="'+p.kimchi+'"></div></div>'+
-    '<button class="btn primary" data-act="po-submit"'+(bs.length?'':' disabled')+'>幫客人訂好</button>';
-}
-function ownCredit(){
-  var rows=Object.keys(S.credits).filter(function(n){return S.credits[n]>0;}).sort(function(a,b){return S.credits[b]-S.credits[a];});
-  var h='<p class="hint">系統記得每位客人沒來拿幾次。第 1 次只提醒，滿 2 次自動暫停 LINE 預訂。</p>';
-  h+='<div class="olist" id="creditlist">'+rows.map(function(n){
-    var c=S.credits[n],st,act='';
-    if(c>=2&&!S.override[n]){st=['已暫停 LINE 預訂','bad'];act='<span class="acts"><button class="btn small" data-act="unblock" data-v="'+esc(n)+'">放他一馬（解除）</button>'+(n===BAD_NAME?'<button class="btn small" data-act="identity" data-v="blocked">看他手機上的畫面</button>':'')+'</span>';}
-    else if(c>=2)st=['老闆已解除','warn'];
-    else st=['提醒過一次','warn'];
-    return '<div class="orow"><span class="nm">'+esc(n)+'</span>'+chip(st)+'<small>沒來拿 '+c+' 次</small>'+act+'</div>';
-  }).join('')+'</div>';
-  return h;
-}
-function ownLog(){
-  return '<p class="hint">系統自動做的每件事都有紀錄。今天已經傳了 <b class="num">'+S.pushes+'</b> 則 LINE 通知。</p><ul class="log">'+
-    S.log.slice().reverse().map(function(l){return '<li><time>'+fmt(l.t)+'</time><span>'+esc(l.text)+'</span></li>';}).join('')+'</ul>';
-}
-
-/* ---------- render all ---------- */
 function render(){
   var keep={};
   document.querySelectorAll('[data-scroll]').forEach(function(e){keep[e.getAttribute('data-scroll')]=e.scrollTop;});
-  renderCust();renderOwner();renderTop();renderViewTabs();renderTour();
+  app.renderPanels();renderTop();renderViewTabs();renderTour();
+  var hints=app.scrollHints();
   document.querySelectorAll('[data-scroll]').forEach(function(e){
     var k=e.getAttribute('data-scroll');
-    if(k==='cust-chat'&&S.chat.length!==lastChatLen)e.scrollTop=e.scrollHeight;
+    if(k==='cust-chat'&&hints.chatLen!==lastChatLen)e.scrollTop=e.scrollHeight;
     else if(keep[k]!=null)e.scrollTop=keep[k];
   });
-  if(S.custScreen==='chat')lastChatLen=S.chat.length;
+  if(hints.custScreen==='chat')lastChatLen=hints.chatLen;
   requestAnimationFrame(placeSpot);
 }
+
 function toast(t){
   var el=document.getElementById('toast');el.textContent=t;el.hidden=false;
   clearTimeout(toastTimer);toastTimer=setTimeout(function(){el.hidden=true;},2800);
 }
 
-/* ---------- actions ---------- */
-function cancelOrder(o){
-  var b=getB(o.batchId);
-  if(S.now>=b.start){toast('已經開始取餐，不能取消了');return;}
-  o.status='cancelled';
-  addLog(S.now,'cancel',o.name+' 自己取消 '+b.name+' '+o.qty+' 隻');
-  pushChat({type:'text',from:'store',tag:'reply',text:'已取消 '+b.name+' '+o.qty+' 隻。謝謝你提早說！'});
-  S.newPush=0;release(b,o.qty,S.now);
-  toast('已取消，名額自動空出來');
-}
-function act(a,v,f){
-  var o,b;
-  switch(a){
-    case 'time':advance(S.now+Number(v));break;
-    case 'next':var ev=upcoming();if(ev.length)advance(ev[0].t);break;
-    case 'view':S.view=v;break;
-    case 'cust':S.custScreen=v;break;
-    case 'identity':S.identity=v;S.selBatch=null;if(v==='blocked'){S.custScreen='order';S.orderSession='sat';S.view='cust';}toast(v==='blocked'?'現在是「'+BAD_NAME+'」的手機畫面':'切回一般客人');break;
-    case 'open-order':S.custScreen='order';S.orderSession=v;S.selBatch=null;
-      S.chat.push({id:S.nextMsg++,type:'text',from:'me',time:fmt(S.now),text:'預訂 '+SESS[v].short});break;
-    case 'osess':S.orderSession=v;S.selBatch=null;break;
-    case 'pick-batch':S.selBatch=v;S.form={qty:1,kimchi:0,essence:0};break;
-    case 'step':
-      var sb=getB(S.selBatch);if(!sb)break;
-      var cur=S.form[f]+Number(v),mx=f==='qty'?Math.min(5,remaining(sb)):5,mn=f==='qty'?1:0;
-      S.form[f]=Math.max(mn,Math.min(mx,cur));break;
-    case 'submit':
-      b=getB(S.selBatch);var nm=meName();
-      if(!b||!orderable(b)){toast('這爐已經截止，請選別爐');break;}
-      if(isBlocked(nm)){toast('這個帳號已暫停 LINE 預訂');break;}
-      if(S.form.qty>remaining(b)){toast('這爐只剩 '+remaining(b)+' 隻');break;}
-      o={id:S.nextId++,batchId:b.id,name:nm,phone4:'5678',qty:S.form.qty,kimchi:S.form.kimchi,essence:S.form.essence,status:'pending',isMe:true,src:'line'};
-      S.orders.push(o);
-      pushChat({type:'text',from:'store',tag:'reply',text:'✅ 預訂成功\n'+SESS[b.s].label+'\n'+b.name+' '+fmt(b.start)+'–'+fmt(b.end)+'\n'+items(o)+'\n\n取餐前 1 小時會傳 LINE 提醒你。'});
-      addLog(S.now,'order',nm+' 用 LINE 訂了 '+b.name+' '+o.qty+' 隻');
-      S.selBatch=null;S.custScreen='mine';if(!tour.on)toast('訂好了！老闆後台的數字也同時更新');break;
-    case 'join-wait':
-      b=getB(v);if(isBlocked(meName())){toast('這個帳號已暫停 LINE 預訂');break;}
-      b.waitlist.push({isMe:true,qty:Math.max(1,S.form.qty||1),name:meName()});
-      pushChat({type:'text',from:'store',tag:'reply',text:'已幫你排進 '+b.name+' 候補第 '+b.waitlist.length+' 位。有人取消會馬上通知你。'});
-      addLog(S.now,'wait',meName()+' 排進 '+b.name+' 候補');if(!tour.on)toast('已排進候補');break;
-    case 'r-confirm':
-      o=getO(v);
-      if(o&&o.status==='pending'){o.status='confirmed';addLog(S.now,'remind',o.name+' 回覆會準時來拿（'+getB(o.batchId).name+'）');
-        S.chat.push({id:S.nextMsg++,type:'text',from:'me',time:fmt(S.now),text:'確認會到'});}
-      break;
-    case 'my-cancel':o=getO(v);if(o&&(o.status==='pending'||o.status==='confirmed'))cancelOrder(o);break;
-    case 'my-change':
-      o=getO(v);var sel=document.getElementById('chg-'+v);
-      if(o&&sel){var to=getB(sel.value),from=getB(o.batchId);
-        if(!orderable(to)||remaining(to)<o.qty){toast('那一爐名額不夠');break;}
-        o.batchId=to.id;addLog(S.now,'order',o.name+' 自己改爐：'+from.name+' → '+to.name);
-        pushChat({type:'text',from:'store',tag:'reply',text:'已改到 '+to.name+' '+fmt(to.start)+'–'+fmt(to.end)+'。'});toast('改好了，'+from.name+' 的名額自動空出來');}
-      break;
-    case 'offer-accept':
-      if(!S.offer){toast('這個名額已經過期了');break;}
-      var of=S.offer;b=getB(of.batchId);
-      S.orders.push({id:S.nextId++,batchId:b.id,name:of.name,phone4:'5678',qty:of.qty,kimchi:0,essence:0,status:'confirmed',isMe:true,src:'line'});
-      S.chat.forEach(function(m){if(m.id===of.msgId)m.answered='accepted';});
-      S.offer=null;addLog(S.now,'wait',of.name+' 接受候補，拿到 '+b.name+' '+of.qty+' 隻');if(!tour.on)toast('候補成功！');break;
-    case 'otab':S.ownerTab=v;break;
-    case 'lbatch':S.listBatch=v;break;
-    case 'o-pick':
-      o=getO(v);if(o){o.status='picked';addLog(S.now,'pick',o.name+' 拿走了（'+getB(o.batchId).name+' '+o.qty+' 隻）');if(!tour.on)toast('已記錄取餐');}
-      break;
-    case 'o-noshow':
-      o=getO(v);if(o){o.status='noshow';credit(o.name);addLog(S.now,'noshow','老闆記錄沒來拿：'+o.name+'（'+getB(o.batchId).name+' '+o.qty+' 隻）');toast('已記錄，這位客人沒來拿的次數 +1');}
-      break;
-    case 'add-batch':
-      var bs=batchesOf(S.ownerSession),last=bs.reduce(function(a,x){return Math.max(a,x.start);},0),st=last+60;
-      if(st%1440>1380){toast('時間太晚了，不能再加開');break;}
-      var k=bs.filter(function(x){return x.name.indexOf('加開')===0;}).length+1;
-      var nb={id:'x'+S.nextId++,s:S.ownerSession,name:'加開爐 '+k,start:st,end:st+20,cap:10,waitlist:[]};
-      S.batches.push(nb);addLog(S.now,'order','老闆加開 '+nb.name+' '+fmt(nb.start)+'–'+fmt(nb.end)+'，10 隻');
-      toast('加開好了，客人手機上馬上看得到');break;
-    case 'po-submit':
-      var p=S.po;b=getB(p.batch);var qn=parseInt(p.qty,10)||0,kn=parseInt(p.kimchi,10)||0;
-      var digits=String(p.phone).replace(/\D/g,'');
-      if(!p.name.trim()){toast('請填客人稱呼');break;}
-      if(digits.length<8){toast('請填完整手機號碼，沒來拿時才找得到人');break;}
-      if(!b){toast('請選哪一爐');break;}
-      if(qn<1){toast('雞至少 1 隻');break;}
-      if(qn>remaining(b)){toast('這爐只剩 '+remaining(b)+' 隻');break;}
-      S.orders.push({id:S.nextId++,batchId:b.id,name:p.name.trim(),phone4:digits.slice(-4),qty:qn,kimchi:Math.max(0,kn),essence:0,status:'confirmed',isMe:false,src:'phone',sim:{come:true}});
-      addLog(S.now,'order','電話訂的：'+p.name.trim()+' '+b.name+' '+qn+' 隻');
-      S.po={name:'',phone:'',batch:p.batch,qty:1,kimchi:0};toast('訂好了，名額已扣');break;
-    case 'unblock':S.override[v]=true;addLog(S.now,'system','老闆解除 '+v+' 的暫停');toast('已解除，這位客人可以再用 LINE 訂');break;
-  }
-}
-
-/* ---------- guided tour ---------- */
-function bNoShow(bid){var os=ordersOf(bid).filter(function(o){return o.status==='noshow';});return {n:os.length,q:os.reduce(function(a,o){return a+o.qty;},0)};}
-var TOUR=[
-  {who:'c',target:'#cust .lhead',title:'左邊是客人的手機',
-   text:'客人不用下載任何 App，用平常的 LINE 加你的官方帳號就能訂。右邊是老闆你的後台，用手機也能開。',cta:'好，繼續',
-   prep:function(){S.custScreen='chat';}},
-  {who:'c',target:'#cust [data-msg="schedule"] .srow:nth-child(2)',click:'#cust [data-act="open-order"][data-v="sat"]',title:'客人點「立即預訂」',
-   text:'你每週發的巡迴行程，客人在 LINE 裡點這個綠色按鈕就能訂。不用再留言「第二爐+1」，老闆也不用一則一則按讚確認。',cta:'幫我按「立即預訂」',
-   prep:function(){S.custScreen='chat';},run:function(){act('open-order','sat');},done:function(){return S.custScreen==='order';}},
-  {who:'c',target:'#cust .blist',click:'#cust [data-act="pick-batch"][data-v="b3"]',title:'每一爐還剩幾隻，一看就知道',
-   text:'橘色條是已經訂掉的。第五爐滿了就訂不了，不用再改貼文寫「已額滿」。我們幫客人選第四爐。',cta:'幫我選「第四爐」',
-   prep:function(){S.custScreen='order';S.orderSession='sat';S.selBatch=null;},run:function(){act('pick-batch','b3');},done:function(){return S.selBatch==='b3';}},
-  {who:'c',target:'#cust .form',click:'#cust .form',title:'選好數量，按「送出預訂」',
-   text:'客人選 2 隻雞、1 份泡菜。手機號碼第一次訂就綁好了，下次不用再填。',cta:'幫我選好並送出',
-   prep:function(){S.custScreen='order';S.orderSession='sat';if(S.selBatch!=='b3'){S.selBatch='b3';S.form={qty:1,kimchi:0,essence:0};}},
-   run:function(){S.form={qty:2,kimchi:1,essence:0};act('submit');},done:function(){return !!myOrder('b3');}},
-  {who:'o',target:'#owner .bcard[data-bid="b3"]',title:'老闆這邊，馬上就看到了',
-   text:'第四爐自動多了這 2 隻。往下還有「要準備多少」，雞、泡菜、滴雞精各要幾份，系統自動算好。',cta:'知道了，繼續',
-   prep:function(){S.ownerTab='overview';S.ownerSession='sat';}},
-  {who:'c',target:'#cust [data-bid="b4"]',click:'#cust [data-act="join-wait"][data-v="b4"]',title:'第五爐滿了？可以排候補',
-   text:'有人取消的時候，系統會自動用 LINE 通知排候補的客人，雞不會浪費。',cta:'幫我按「排候補」',
-   prep:function(){S.custScreen='order';S.orderSession='sat';S.form.qty=2;},run:function(){act('join-wait','b4');},
-   done:function(){return getB('b4').waitlist.some(function(w){return w.isMe;});}},
-  {who:'t',target:'#clockbox',title:'把時間快轉到下午 2:45',
-   text:'上面是示範用的時鐘。2:45 是第四爐取餐前 1 小時，系統會自動傳 LINE 提醒客人。',cta:'快轉到 14:45',
-   run:function(){advance(885);},done:function(){return S.now>=885;}},
-  {who:'c',target:'#cust [data-msg="reminder"]',click:'#cust [data-msg="reminder"] [data-act="r-confirm"]',title:'客人收到提醒，按「確認會到」',
-   text:'老闆不用一個一個打電話。沒按確認的，取餐前 15 分鐘系統會再提醒一次。',cta:'幫我按「確認會到」',
-   prep:function(){S.custScreen='chat';},run:function(){var o=myOrder('b3');if(o)act('r-confirm',o.id);},
-   done:function(){var o=myOrder('b3');return o&&o.status!=='pending';}},
-  {who:'o',target:'#owner .orow.mine',click:'#owner .orow.mine [data-act="o-pick"]',title:'客人來拿了，按「已取餐」',
-   text:'取餐名單照爐次排好，不用再翻留言對名字。這筆已經是「已確認」，客人來了按一下就好。',cta:'幫我按「已取餐」',
-   prep:function(){S.ownerTab='list';S.ownerSession='sat';S.listBatch='b3';},run:function(){var o=myOrder('b3');if(o)act('o-pick',o.id);},
-   done:function(){var o=myOrder('b3');return o&&o.status==='picked';}},
-  {who:'t',target:'#clockbox',title:'快轉到下午 4:00，有人取消了',
-   text:'4:00 是第五爐取餐前 1 小時。有一位客人收到提醒後按了「不能來」，空出 2 隻。',cta:'快轉到 16:00',
-   run:function(){advance(960);},done:function(){return S.now>=960;}},
-  {who:'c',target:'#cust [data-msg="offer"]',click:'#cust [data-msg="offer"] [data-act="offer-accept"]',title:'排候補的客人馬上收到通知',
-   text:'他在 10 分鐘內按「我要」，名額就是他的。老闆什麼都不用做。',cta:'幫我按「我要」',
-   prep:function(){S.custScreen='chat';},run:function(){act('offer-accept');},done:function(){return !!myOrder('b4');}},
-  {who:'t',target:'#clockbox',title:'快轉到下午 5:30',
-   text:'第五爐 5:00 到 5:20 取餐（每爐 20 分鐘）。過了 5:30 還沒來拿的，系統自動算棄單，名額讓給現場候補的客人。',cta:'快轉到 17:30',
-   run:function(){var o=myOrder('b4');if(o&&(o.status==='pending'||o.status==='confirmed'))o.status='picked';advance(1050);},done:function(){return S.now>=1050;}},
-  {who:'o',target:'#owner .bcard[data-bid="b4"]',title:'沒來拿的，系統自動處理',
-   text:function(){var x=bNoShow('b4');return '第五爐有 '+x.n+' 筆沒來拿，共 '+x.q+' 隻。系統已經算好，名額讓給現場客人，你不用在攤位一直等。';},cta:'繼續',
-   prep:function(){S.ownerTab='overview';S.ownerSession='sat';}},
-  {who:'o',target:'#creditlist',title:'誰常常不來拿，系統記得',
-   text:'第 1 次只提醒，滿 2 次自動暫停 LINE 預訂。不用老闆出面當壞人。',cta:'繼續',
-   prep:function(){S.ownerTab='credit';}},
-  {who:'c',target:'#cust .notice',title:'被暫停的客人，手機上看到這個',
-   text:'他還是可以打電話或來現場買。如果是熟客想給他機會，老闆在後台按「放他一馬」就好。',cta:'看完了',
-   prep:function(){S.identity='blocked';S.custScreen='order';S.orderSession='sat';S.selBatch=null;}}
-];
-var WHO={c:'客人的手機',o:'老闆的後台',t:'示範時鐘'};
-
 function startTour(){
-  init();tour.on=true;tour.i=0;tour.snaps=[];tour.busy=false;
+  app.init(cfg);lastChatLen=0;tour.on=true;tour.i=0;tour.snaps=[];tour.busy=false;
   document.getElementById('modal').hidden=true;document.body.classList.add('touring');
   enterStep();
 }
 function enterStep(){
   var st=TOUR[tour.i];
-  tour.snaps[tour.i]=JSON.stringify(S);
+  tour.snaps[tour.i]=JSON.stringify(app.state());
   if(st.prep)st.prep();
-  if(st.who==='c'||st.who==='o')S.view=st.who==='c'?'cust':'owner';
+  if(st.who==='c'||st.who==='o')app.state().view=st.who==='c'?'cust':'owner';
   render();
   setTimeout(function(){
     var el=document.querySelector(st.target);
@@ -864,7 +535,7 @@ function tourNext(){
 }
 function tourBack(){
   if(tour.busy||tour.i===0)return;
-  tour.i--;S=JSON.parse(tour.snaps[tour.i]);lastChatLen=-1;enterStep();
+  tour.i--;app.setState(JSON.parse(tour.snaps[tour.i]));lastChatLen=-1;enterStep();
 }
 function endTour(done){
   tour.on=false;tour.busy=false;document.body.classList.remove('touring');
@@ -878,7 +549,7 @@ function renderTour(){
   sh.hidden=false;
   sh.innerHTML='<div class="sh-top"><span class="sh-count">第 <b class="num">'+(tour.i+1)+'</b> 步，共 '+TOUR.length+' 步</span><button class="sh-close" data-tour="close">結束導覽</button></div>'+
     '<div class="sh-bar"><i style="width:'+pct+'%"></i></div>'+
-    '<span class="sh-who '+st.who+'">'+WHO[st.who]+'</span>'+
+    '<span class="sh-who '+st.who+'">'+cfg.labels.who[st.who]+'</span>'+
     '<h2>'+st.title+'</h2><p>'+txt+'</p>'+
     '<div class="sh-btns"><button class="bigbtn back" data-tour="back"'+(tour.i===0||tour.busy?' disabled':'')+'>◀ 上一步</button>'+
     '<button class="bigbtn go" data-tour="next"'+(tour.busy?' disabled':'')+'>'+(tour.busy?'好了！':st.cta+' ▶')+'</button></div>'+
@@ -901,29 +572,9 @@ function nudge(){
   toast('請點框起來的地方，或下面的橘色大按鈕');
 }
 function showModal(kind){
-  var m=document.getElementById('modal');m.hidden=false;
-  if(kind==='welcome'){
-    m.innerHTML='<div class="mcard" role="dialog" aria-labelledby="mt"><h2 id="mt">「訂了不來拿」的煩惱，交給系統</h2>'+
-      '<p class="lead">這是示範畫面，資料都是假的，隨便按不會壞。</p>'+
-      '<ol class="mlist"><li><span>1</span><div>客人用 LINE 訂，每一爐剩幾隻自動算<small>不用再數留言、改貼文</small></div></li>'+
-      '<li><span>2</span><div>取餐前 1 小時，自動傳 LINE 提醒<small>客人按「確認會到」，沒回再提醒一次</small></div></li>'+
-      '<li><span>3</span><div>時間到沒來拿，自動讓給現場客人<small>滿 2 次的客人，自動暫停 LINE 預訂</small></div></li></ol>'+
-      '<div class="mbtns"><button class="bigbtn go" data-tour="start">▶ 開始導覽（大約 3 分鐘）</button>'+
-      '<button class="bigbtn alt" data-tour="free">我想自己點點看</button></div>'+
-      '<p class="mnote">導覽中每一步都有大按鈕幫你按，跟著看就好。</p></div>';
-  }else{
-    m.innerHTML='<div class="mcard" role="dialog" aria-labelledby="mt"><h2 id="mt">導覽看完了</h2>'+
-      '<p class="lead">剛剛這一場，系統幫老闆做了這些事：</p>'+
-      '<ol class="mlist"><li><span>1</span><div>名額自動扣，不會超賣，也不用改貼文</div></li>'+
-      '<li><span>2</span><div>自動提醒客人，不用一個一個打電話</div></li>'+
-      '<li><span>3</span><div>有人取消，自動通知候補的人補上</div></li>'+
-      '<li><span>4</span><div>沒來拿的自動記錄，常犯的人自動暫停</div></li></ol>'+
-      '<div class="mbtns"><button class="bigbtn go" data-tour="free">我想自己點點看</button>'+
-      '<button class="bigbtn alt" data-tour="start">再看一次導覽</button></div></div>';
-  }
+  var m=document.getElementById('modal');m.hidden=false;m.innerHTML=cfg.modal(kind);
 }
 
-/* ---------- events ---------- */
 function allowedInTour(el){
   var st=TOUR[tour.i];
   if(tour.busy||!st.click)return false;
@@ -936,7 +587,7 @@ document.addEventListener('click',function(e){
     var t=tb.getAttribute('data-tour');
     if(t==='start')startTour();
     else if(t==='free'){tour.on=false;tour.busy=false;document.body.classList.remove('touring');document.getElementById('spot').hidden=true;
-      document.getElementById('modal').hidden=true;init();render();toast('已重新開始，可以自己隨便點');}
+      document.getElementById('modal').hidden=true;app.init(cfg);lastChatLen=0;render();toast('已重新開始，可以自己隨便點');}
     else if(t==='next')tourNext();
     else if(t==='back')tourBack();
     else if(t==='close')endTour(false);
@@ -955,15 +606,455 @@ document.addEventListener('click',function(e){
 document.addEventListener('change',function(e){
   var t=e.target;
   if(tour.on){render();return;}
-  if(t.getAttribute('data-change')==='osess'){S.ownerSession=t.value;render();}
-  else if(t.hasAttribute('data-bind'))S.po[t.getAttribute('data-bind')]=t.value;
+  if(app.onChange(e))render();
 });
 document.addEventListener('input',function(e){
-  var t=e.target;if(!tour.on&&t.hasAttribute&&t.hasAttribute('data-bind'))S.po[t.getAttribute('data-bind')]=t.value;
+  var t=e.target;if(!tour.on)app.onInput(e);
 });
 window.addEventListener('resize',placeSpot);
 document.addEventListener('scroll',placeSpot,true);
 
-init();render();showModal('welcome');
+function start(){app.init(cfg);TOUR=cfg.tour(app.tourContext({advance:advance}));render();showModal('welcome');}
+
+return {register:function(a){app=a;},start:start,fmt:fmt,esc:esc,chip:chip,toast:toast,advance:advance,tourOn:function(){return tour.on;}};
 })();
-</script>
+
+var PreorderApp=(function(){
+var cfg,S,seed,ni;
+var STATUS={pending:['待確認','warn'],confirmed:['已確認','ok'],picked:['已取餐',''],noshow:['棄單','bad'],cancelled:['已取消','']};
+var LIVE=['pending','confirmed','picked','noshow'];
+var fmt=DemoEngine.fmt,esc=DemoEngine.esc,chip=DemoEngine.chip,toast=DemoEngine.toast;
+var STORE,PRICE,ME_NAME,BAD_NAME,NAMES,SESS;
+function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;}
+function getB(id){for(var i=0;i<S.batches.length;i++)if(S.batches[i].id===id)return S.batches[i];return null;}
+function getO(id){id=Number(id);for(var i=0;i<S.orders.length;i++)if(S.orders[i].id===id)return S.orders[i];return null;}
+function myOrder(bid){return S.orders.filter(function(o){return o.isMe&&o.batchId===bid&&o.status!=='cancelled';})[0];}
+function batchesOf(s){return S.batches.filter(function(b){return b.s===s;});}
+function ordersOf(bid){return S.orders.filter(function(o){return o.batchId===bid;});}
+function used(b){return ordersOf(b.id).reduce(function(a,o){return a+(o.status==='cancelled'?0:o.qty);},0);}
+function remaining(b){return Math.max(0,b.cap-used(b));}
+function meName(){return S.identity==='blocked'?BAD_NAME:ME_NAME;}
+function isBlocked(n){return (S.credits[n]||0)>=2&&!S.override[n];}
+function orderable(b){return S.now<b.start-60;}
+function credit(n){S.credits[n]=(S.credits[n]||0)+1;}
+function addLog(t,kind,text){S.log.push({t:t,kind:kind,text:text});}
+function items(o){var a=[cfg.main.short+' '+o.qty+' '+cfg.main.unit];if(o.kimchi)a.push(cfg.addons.kimchi.short+' '+o.kimchi+' '+cfg.addons.kimchi.unit);if(o.essence)a.push(cfg.addons.essence.short+' '+o.essence+' '+cfg.addons.essence.unit);return a.join('・');}
+function bState(b){
+  var r=remaining(b);
+  if(S.now<b.start-60)return r>0?['可預訂','ok']:['已額滿','warn'];
+  if(S.now<b.start)return ['已截止・備料中',''];
+  if(S.now<=b.end+10)return ['取餐中','ember'];
+  return ['已結束',''];
+}
+function fill(total,first){var a=first?[first]:[],s=first||0;while(s<total){var q=Math.min(total-s,1+Math.floor(rnd()*3));a.push(q);s+=q;}return a;}
+function addSim(bid,qty,status,sim){
+  var src=sim?'line':(rnd()<.15?'phone':'line');
+  if(src==='phone'&&status==='pending')status='confirmed';
+  var o={id:S.nextId++,batchId:bid,name:NAMES[ni++%NAMES.length],phone4:String(1000+Math.floor(rnd()*9000)),qty:qty,
+    kimchi:rnd()<.3?1:0,essence:rnd()<.12?1:0,status:status,isMe:false,src:src,
+    sim:Object.assign({r1:'confirm',r2:'confirm',come:true},sim||{})};
+  S.orders.push(o);return o;
+}
+function pushChat(m){
+  m.id=S.nextMsg++;m.time=fmt(S.now);S.chat.push(m);
+  if(S.custScreen!=='chat')S.unread++;
+  if(m.tag==='push'||m.type==='reminder'||m.type==='offer')S.newPush++;
+  return m;
+}
+
+function tick(m){
+  S.batches.forEach(function(b){
+    if(b.s!==cfg.batchDays[0].key)return;
+    var os=ordersOf(b.id),n=0;
+    if(m===b.start-60){
+      os.forEach(function(o){
+        if(o.status!=='pending'||o.src!=='line')return;n++;
+        if(o.isMe)pushChat({type:'reminder',orderId:o.id,round:1,from:'store'});
+        else if(o.sim.r1==='confirm')o.status='confirmed';
+        else if(o.sim.r1==='cancel'){o.status='cancelled';addLog(m,'cancel',o.name+' 收到提醒後取消 '+b.name+' '+o.qty+' '+cfg.main.unit+'');release(b,o.qty,m);}
+      });
+      S.pushes+=n;addLog(m,'remind',b.name+' 取餐提醒：傳了 '+n+' 則 LINE，線上預訂截止');
+    }
+    if(m===b.start-15){
+      os.forEach(function(o){
+        if(o.status!=='pending'||o.src!=='line')return;n++;
+        if(o.isMe)pushChat({type:'reminder',orderId:o.id,round:2,from:'store'});
+        else if(o.sim.r2==='confirm')o.status='confirmed';
+      });
+      if(n){S.pushes+=n;addLog(m,'remind',b.name+' 第二次提醒：傳了 '+n+' 則（只傳給還沒確認的人）');}
+    }
+    if(m===b.start+5){
+      var q=0;
+      os.forEach(function(o){if(!o.isMe&&o.sim&&o.sim.come&&(o.status==='pending'||o.status==='confirmed')){o.status='picked';q+=o.qty;}});
+      addLog(m,'pick',b.name+' 開始取餐'+(q?'：已拿走 '+q+' '+cfg.main.unit+'':''));
+    }
+    if(m===b.end+10){
+      var ns=os.filter(function(o){return o.status==='pending'||o.status==='confirmed';}),tq=0;
+      ns.forEach(function(o){
+        o.status='noshow';tq+=o.qty;credit(o.name);
+        if(o.isMe){pushChat({type:'text',from:'store',tag:'push',text:'你預訂的 '+b.name+'（'+o.qty+' '+cfg.main.unit+'）已經過了取餐時間，系統記為沒來拿。\n累計 2 次會暫停 LINE 預訂，改用電話或現場購買。'});S.pushes++;}
+      });
+      if(ns.length)addLog(m,'noshow',b.name+' 時間到沒來拿：'+ns.length+' 筆共 '+tq+' '+cfg.main.unit+' → 讓給現場客人');
+      else addLog(m,'pick',b.name+' 全部拿走了，沒有棄單');
+    }
+  });
+  if(S.offer&&S.offer.expires===m){
+    S.chat.forEach(function(x){if(x.id===S.offer.msgId)x.answered='expired';});
+    addLog(m,'wait','候補通知 10 分鐘沒回覆，名額讓給現場');S.offer=null;
+  }
+}
+function release(b,qty,m){
+  var w=b.waitlist.shift();
+  if(!w){addLog(m,'wait',b.name+' 空出 '+qty+' '+cfg.main.unit+''+(m<b.start-60?'，回到 LINE 上可以訂':'，讓給現場客人'));return;}
+  var give=Math.min(w.qty,qty);
+  if(w.isMe){
+    var msg=pushChat({type:'offer',from:'store',batchId:b.id,qty:give,expires:m+10});
+    S.offer={msgId:msg.id,batchId:b.id,qty:give,expires:m+10,name:w.name};
+    S.pushes++;
+    addLog(m,'wait',b.name+' 空出 '+qty+' '+cfg.main.unit+' → 通知候補第 1 位（'+w.name+'），10 分鐘內回覆');
+  }else{
+    S.orders.push({id:S.nextId++,batchId:b.id,name:w.name,phone4:'0000',qty:give,kimchi:0,essence:0,status:'confirmed',isMe:false,src:'line',sim:{come:true}});
+    addLog(m,'wait',b.name+' 空出 '+qty+' '+cfg.main.unit+' → 候補 '+w.name+' 補上');
+  }
+}
+function renderCust(){
+  var body='';
+  if(S.custScreen==='chat'){S.unread=0;body=chatView();}
+  else if(S.custScreen==='order')body=orderView();
+  else body=mineView();
+  var nav=[['chat','聊天'],['order','訂購'],['mine','我的訂單']].map(function(x){
+    var b=(x[0]==='chat'&&S.unread)?'<span class="badge">'+S.unread+'</span>':'';
+    return '<button data-act="cust" data-v="'+x[0]+'" class="'+(S.custScreen===x[0]?'on':'')+'">'+x[1]+b+'</button>';
+  }).join('');
+  document.getElementById('cust').innerHTML='<div class="sbar"><span class="num">'+fmt(S.now)+'</span><span>5G ▮▮▮</span></div>'+
+    '<div class="lhead"><span class="av">'+cfg.avatar+'</span><span class="t"><b>'+STORE+'</b><span>LINE 官方帳號（示範畫面）</span></span><span class="lpill">LINE</span></div>'+
+    '<div class="scroll" data-scroll="cust-'+S.custScreen+'">'+body+'</div><nav class="cnav">'+nav+'</nav>';
+}
+function storeMsg(inner,m,key){
+  var tag=m.tag==='reply'?'回覆訊息・免費':'主動通知・算在 LINE 方案則數';
+  return '<div class="msg"'+(key?' data-msg="'+key+'"':'')+'><span class="av">'+cfg.avatar+'</span><div class="bwrap"><div class="bubble">'+inner+'</div><span class="meta">'+esc(m.time)+'・'+tag+'</span></div></div>';
+}
+function chatView(){
+  return '<div class="chat">'+S.chat.map(function(m){
+    if(m.type==='schedule'){
+      var rows=cfg.sessionOrder.map(function(k){
+        var s=SESS[k];
+        return '<div class="srow"><b>'+s.label+'</b><small>'+s.addr+'</small>'+
+          (s.ended?'<button class="bbtn" disabled>已結束</button>':'<button class="bbtn go" data-act="open-order" data-v="'+k+'">立即預訂</button>')+'</div>';
+      }).join('');
+      return storeMsg('<h4>'+cfg.scheduleTitle+'</h4>'+cfg.scheduleMenu+'<div class="sched">'+rows+'</div>',m,'schedule');
+    }
+    if(m.type==='text'){
+      if(m.from==='me')return '<div class="msg me"><div class="bwrap"><div class="bubble">'+esc(m.text)+'</div><span class="meta">'+m.time+'</span></div></div>';
+      return storeMsg(esc(m.text),m);
+    }
+    if(m.type==='reminder'){
+      var o=getO(m.orderId),b=getB(o.batchId),foot;
+      if(o.status==='pending')foot='<div class="bact"><button class="bbtn go" data-act="r-confirm" data-v="'+o.id+'">確認會到</button><button class="bbtn" data-act="my-cancel" data-v="'+o.id+'">不能來，取消訂單</button></div>';
+      else foot='<div class="answer">'+({confirmed:'✓ 已確認，等你來拿',cancelled:'已取消，名額讓給別人了',picked:'✓ 已取餐，謝謝光臨',noshow:'時間過了沒來拿'})[o.status]+'</div>';
+      return storeMsg('<h4>'+(m.round===1?'⏰ 取餐提醒':'⏰ 再提醒一次：還沒收到你的確認')+'</h4>'+b.name+'　'+fmt(b.start)+'–'+fmt(b.end)+'\n'+SESS[b.s].place+'\n'+items(o)+'\n\n會準時來拿嗎？請按下面的按鈕。'+foot,{time:m.time,tag:'push'},'reminder');
+    }
+    if(m.type==='offer'){
+      var bb=getB(m.batchId),f;
+      if(m.answered==='accepted')f='<div class="answer">✓ 名額保留給你了</div>';
+      else if(m.answered==='expired')f='<div class="answer">超過 10 分鐘，名額讓給現場客人了</div>';
+      else f='<div class="bact"><button class="bbtn go" data-act="offer-accept">我要這 '+m.qty+' '+cfg.main.unit+'</button></div>';
+      return storeMsg('<h4>🔔 候補通知</h4>'+bb.name+' 有人取消，空出 '+m.qty+' '+cfg.main.unit+'。\n請在 '+fmt(m.expires)+' 前按下面的按鈕，超過就讓給下一位。'+f,{time:m.time,tag:'push'},'offer');
+    }
+    return '';
+  }).join('')+'</div>';
+}
+function orderView(){
+  var sk=S.orderSession,sess=SESS[sk],name=meName();
+  var h='<div class="pad"><div class="seg">'+cfg.orderableSessions.map(function(k){
+    return '<button data-act="osess" data-v="'+k+'" class="'+(sk===k?'on':'')+'">'+SESS[k].short+'</button>';
+  }).join('')+'</div><p class="addr">📍 '+sess.addr+'</p>';
+  if(isBlocked(name)){
+    return h+'<div class="notice bad"><b>暫停 LINE 預訂</b><br>你已經有 '+S.credits[name]+' 次訂了沒來拿，系統暫停你的 LINE 預訂。<br>還是可以打電話預訂，或到攤位現場買。</div>'+
+      '<button class="btn small" data-act="identity" data-v="normal">切回一般客人</button></div>';
+  }
+  h+='<div class="blist">'+batchesOf(sk).map(function(b){
+    var r=remaining(b),st=bState(b),pct=Math.round(used(b)/b.cap*100),can=orderable(b)&&r>0;
+    var waiting=b.waitlist.some(function(w){return w.isMe;}),tail='';
+    if(orderable(b)&&r===0)tail=waiting?'<span class="chip ember">你在候補名單上</span>':'<button class="btn small" data-act="join-wait" data-v="'+b.id+'">排候補</button>';
+    var inner='<span><span class="bn">'+b.name+'</span><span class="bt">'+fmt(b.start)+'–'+fmt(b.end)+'</span></span>'+chip(st)+
+      '<span class="meter'+(r===0?' full':'')+'"><i style="width:'+pct+'%"></i></span>'+
+      '<span class="left"><span>'+(r>0?'還剩 <b class="num">'+r+'</b> '+cfg.main.unit+'':'全部 '+b.cap+' '+cfg.main.unit+'都訂完了')+'</span>'+tail+'</span>';
+    if(can)return '<button class="batch'+(S.selBatch===b.id?' sel':'')+'" data-act="pick-batch" data-v="'+b.id+'">'+inner+'</button>';
+    return '<div class="batch off" data-bid="'+b.id+'">'+inner+'</div>';
+  }).join('')+'</div>';
+  var b=getB(S.selBatch);
+  if(b&&b.s===sk&&orderable(b)){
+    var f=S.form,max=Math.min(5,remaining(b)),tot=f.qty*PRICE.chicken+f.kimchi*PRICE.kimchi+f.essence*PRICE.essence;
+    h+='<div class="form"><b>'+b.name+'　'+fmt(b.start)+'–'+fmt(b.end)+'</b>'+
+      stepRow(cfg.main.name,'$'+cfg.main.price+'・這'+cfg.batchUnit+'最多再訂 '+max+' '+cfg.main.unit,'qty',f.qty)+
+      stepRow(cfg.addons.kimchi.name,cfg.addons.kimchi.detail,'kimchi',f.kimchi)+
+      stepRow(cfg.addons.essence.name,cfg.addons.essence.detail,'essence',f.essence)+
+      '<div class="bound">取餐人：'+name+'　手機 0912-***-678 <b>✓ 已綁定</b></div>'+
+      '<div class="total"><span>合計（現場付款）</span><b>$'+tot.toLocaleString()+'</b></div>'+
+      '<button class="subbtn" data-act="submit">送出預訂</button></div>';
+  }else{
+    h+='<p class="hint">點一個「可預訂」的'+cfg.batchUnit+'次開始訂。取餐前 1 小時截止。</p>';
+  }
+  return h+'</div>';
+}
+function stepRow(label,sub,field,val){
+  return '<div class="frow"><span class="lab">'+label+'<small>'+sub+'</small></span><span class="stepper">'+
+    '<button data-act="step" data-f="'+field+'" data-v="-1" aria-label="減少'+label+'">−</button><span>'+val+'</span>'+
+    '<button data-act="step" data-f="'+field+'" data-v="1" aria-label="增加'+label+'">＋</button></span></div>';
+}
+function mineView(){
+  var mine=S.orders.filter(function(o){return o.isMe;}).slice().reverse();
+  var waits=[];S.batches.forEach(function(b){b.waitlist.forEach(function(w){if(w.isMe)waits.push({b:b,w:w});});});
+  if(!mine.length&&!waits.length)return '<div class="empty">還沒有訂單。<br>到「訂購」選一'+cfg.batchUnit+'試試看。</div>';
+  var h='<div class="pad">';
+  waits.forEach(function(x){h+='<div class="ocard"><div class="h"><b>'+x.b.name+' '+fmt(x.b.start)+'</b><span class="chip ember">候補中</span></div><small>'+SESS[x.b.s].label+'・想要 '+x.w.qty+' '+cfg.main.unit+'</small><small>有人取消會用 LINE 通知你，10 分鐘內回覆就是你的。</small></div>';});
+  mine.forEach(function(o){
+    var b=getB(o.batchId),act='';
+    if((o.status==='pending'||o.status==='confirmed')&&S.now<b.start){
+      act+='<button class="btn small" data-act="my-cancel" data-v="'+o.id+'">取消</button>';
+      if(orderable(b)){
+        var opts=batchesOf(b.s).filter(function(x){return x.id!==b.id&&orderable(x)&&remaining(x)>=o.qty;});
+        if(opts.length)act+='<select id="chg-'+o.id+'" aria-label="改到哪一'+cfg.batchUnit+'">'+opts.map(function(x){return '<option value="'+x.id+'">'+x.name+' '+fmt(x.start)+'</option>';}).join('')+'</select><button class="btn small" data-act="my-change" data-v="'+o.id+'">改'+cfg.batchUnit+'</button>';
+      }
+    }
+    h+='<div class="ocard"><div class="h"><b>'+b.name+' '+fmt(b.start)+'–'+fmt(b.end)+'</b>'+chip(STATUS[o.status])+'</div>'+
+      '<small>'+SESS[b.s].label+'</small><small>'+items(o)+'</small>'+(act?'<div class="acts">'+act+'</div>':'')+'</div>';
+  });
+  return h+'<p class="hint">客人自己改'+cfg.batchUnit+'、取消，不用再留言「改第三'+cfg.batchUnit+'」。</p></div>';
+}
+
+/* ---------- render: owner ---------- */
+function renderOwner(){
+  var sk=S.ownerSession;
+  var tabs=[['overview','總覽'],['list','取餐名單'],['phone','電話代訂'],['credit','客人信用'],['log','系統紀錄']];
+  var body=S.ownerTab==='overview'?ownOverview(sk):S.ownerTab==='list'?ownList(sk):S.ownerTab==='phone'?ownPhone(sk):S.ownerTab==='credit'?ownCredit():ownLog();
+  document.getElementById('owner').innerHTML=
+    '<div class="ohead"><b>店家後台</b><select id="osess" data-change="osess" aria-label="場次">'+
+      cfg.orderableSessions.map(function(k){return '<option value="'+k+'"'+(sk===k?' selected':'')+'>'+SESS[k].label+'</option>';}).join('')+
+    '</select></div>'+
+    '<div class="otabs">'+tabs.map(function(t){return '<button class="otab'+(S.ownerTab===t[0]?' on':'')+'" data-act="otab" data-v="'+t[0]+'">'+t[1]+'</button>';}).join('')+'</div>'+
+    '<div class="scroll" data-scroll="owner-'+S.ownerTab+'"><div class="pad">'+body+'</div></div>';
+}
+function sumBy(os,st,f){return os.reduce(function(a,o){return a+((st.indexOf(o.status)>=0)?o[f||'qty']:0);},0);}
+
+function ownOverview(sk){
+  var os=S.orders.filter(function(o){return getB(o.batchId).s===sk;});
+  var booked=sumBy(os,LIVE),picked=sumBy(os,['picked']),ns=sumBy(os,['noshow']);
+  var h='<div class="stats">'+
+    '<div class="stat"><small>已預訂</small><b>'+booked+'<em>'+cfg.main.unit+'</em></b></div>'+
+    '<div class="stat"><small>已拿走</small><b>'+picked+'<em>'+cfg.main.unit+'</em></b></div>'+
+    '<div class="stat'+(ns?' alert':'')+'"><small>沒來拿（已讓給現場）</small><b>'+ns+'<em>'+cfg.main.unit+'</em></b></div>'+
+    '<div class="stat"><small>今天傳的 LINE 通知</small><b>'+(sk===cfg.batchDays[0].key?S.pushes:0)+'<em>則</em></b></div></div>';
+  h+='<div class="sec"><h3>每一'+cfg.batchUnit+'的狀況</h3><button class="btn small" data-act="add-batch">＋ 加開一'+cfg.batchUnit+'</button></div>';
+  batchesOf(sk).forEach(function(b){
+    var bo=ordersOf(b.id),u=used(b),pct=Math.round(u/b.cap*100),nsq=sumBy(bo,['noshow']);
+    h+='<div class="bcard" data-bid="'+b.id+'"><span><b>'+b.name+'</b> <span class="num muted">'+fmt(b.start)+'–'+fmt(b.end)+'</span></span>'+chip(bState(b))+
+      '<span class="meter'+(u>=b.cap?' full':'')+'"><i style="width:'+pct+'%"></i></span>'+
+      '<span class="cnt"><span>已訂 <b>'+u+'/'+b.cap+'</b> '+cfg.main.unit+'</span><span>待確認 <b>'+sumBy(bo,['pending'])+'</b></span><span>已確認 <b>'+sumBy(bo,['confirmed'])+'</b></span><span>已拿走 <b>'+sumBy(bo,['picked'])+'</b></span><span'+(nsq?' class="bad"':'')+'>沒來拿 <b>'+nsq+'</b></span>'+(b.waitlist.length?'<span>候補 <b>'+b.waitlist.length+'</b> 人</span>':'')+'</span></div>';
+  });
+  var rows='',t=[0,0,0];
+  batchesOf(sk).forEach(function(b){
+    var bo=ordersOf(b.id),c=sumBy(bo,LIVE),k=sumBy(bo,LIVE,'kimchi'),e=sumBy(bo,LIVE,'essence');
+    t[0]+=c;t[1]+=k;t[2]+=e;
+    rows+='<tr><td>'+b.name+' <span class="muted num">'+fmt(b.start)+'</span></td><td class="r">'+c+'</td><td class="r">'+k+'</td><td class="r">'+e+'</td></tr>';
+  });
+  h+='<div class="sec"><h3>要準備多少（自動加總）</h3></div><div class="tbl" id="prep"><table><thead><tr><th>'+cfg.batchUnit+'次</th><th class="r">'+cfg.main.prep+'</th><th class="r">'+cfg.addons.kimchi.short+'</th><th class="r">'+cfg.addons.essence.short+'</th></tr></thead><tbody>'+rows+
+    '</tbody><tfoot><tr><td>合計</td><td class="r">'+t[0]+'</td><td class="r">'+t[1]+'</td><td class="r">'+t[2]+'</td></tr></tfoot></table></div>';
+  return h;
+}
+function ownList(sk){
+  var bs=batchesOf(sk);
+  if(!getB(S.listBatch)||getB(S.listBatch).s!==sk)S.listBatch=bs[0].id;
+  var b=getB(S.listBatch),rank={pending:0,confirmed:1,noshow:2,picked:3,cancelled:4};
+  var os=ordersOf(b.id).slice().sort(function(x,y){return (y.isMe-x.isMe)||(rank[x.status]-rank[y.status]);});
+  var h='<div class="pills">'+bs.map(function(x){return '<button class="pill'+(x.id===b.id?' on':'')+'" data-act="lbatch" data-v="'+x.id+'">'+x.name+' '+fmt(x.start)+'</button>';}).join('')+'</div>';
+  h+='<p class="hint">'+chip(bState(b))+'　已訂 '+used(b)+'/'+b.cap+' '+cfg.main.unit+'。客人來了按「已取餐」就好。</p>';
+  h+='<div class="olist">'+os.map(function(o){
+    var acts=(o.status==='pending'||o.status==='confirmed')?'<span class="acts"><button class="btn small primary" data-act="o-pick" data-v="'+o.id+'">已取餐</button><button class="btn small" data-act="o-noshow" data-v="'+o.id+'">沒來拿</button></span>':'';
+    return '<div class="orow'+(o.isMe?' mine':'')+'"><span><span class="nm">'+esc(o.name)+'</span>'+(o.isMe?'<span class="youtag">示範客人</span>':'')+'</span>'+chip(STATUS[o.status])+
+      '<small>'+items(o)+'・手機末 4 碼 '+(o.isMe?'5678':o.phone4)+'・'+(o.src==='phone'?'電話訂的':'LINE 訂的')+'</small>'+acts+'</div>';
+  }).join('')+'</div>';
+  if(b.waitlist.length)h+='<div class="sec"><h3>候補名單</h3></div><div class="olist">'+b.waitlist.map(function(w,i){return '<div class="orow"><span class="nm">'+(i+1)+'. '+esc(w.name)+'</span><span class="chip ember">想要 '+w.qty+' '+cfg.main.unit+'</span></div>';}).join('')+'</div>';
+  return h;
+}
+function ownPhone(sk){
+  var p=S.po,bs=batchesOf(sk).filter(function(b){return S.now<=b.end;});
+  var phoneAddons=Object.keys(cfg.addons).filter(function(k){return cfg.addons[k].phone;});
+  if(!bs.some(function(b){return b.id===p.batch;}))p.batch=bs.length?bs[0].id:'';
+  return '<p class="hint">不會用 LINE 的熟客打電話來，老闆直接在這裡幫他訂，名額一樣會扣。</p>'+
+    '<div class="grid2"><div class="field"><label for="po-name">客人稱呼</label><input id="po-name" data-bind="name" value="'+esc(p.name)+'" placeholder="例：王先生"></div>'+
+    '<div class="field"><label for="po-phone">手機</label><input id="po-phone" data-bind="phone" inputmode="tel" value="'+esc(p.phone)+'" placeholder="例：0911-222-333"></div></div>'+
+    '<div class="field"><label for="po-batch">哪一'+cfg.batchUnit+'</label><select id="po-batch" data-bind="batch">'+bs.map(function(b){return '<option value="'+b.id+'"'+(p.batch===b.id?' selected':'')+'>'+b.name+' '+fmt(b.start)+'（還剩 '+remaining(b)+' '+cfg.main.unit+'）</option>';}).join('')+'</select></div>'+
+    '<div class="grid2"><div class="field"><label for="po-qty">'+cfg.main.prep+'（'+cfg.main.unit+'）</label><input id="po-qty" data-bind="qty" type="number" min="1" max="10" value="'+p.qty+'"></div>'+
+    phoneAddons.map(function(k){var item=cfg.addons[k];return '<div class="field"><label for="po-'+k+'">'+item.short+'（'+item.unit+'）</label><input id="po-'+k+'" data-bind="'+k+'" type="number" min="0" max="10" value="'+p[k]+'"></div>';}).join('')+'</div>'+
+    '<button class="btn primary" data-act="po-submit"'+(bs.length?'':' disabled')+'>幫客人訂好</button>';
+}
+function ownCredit(){
+  var rows=Object.keys(S.credits).filter(function(n){return S.credits[n]>0;}).sort(function(a,b){return S.credits[b]-S.credits[a];});
+  var h='<p class="hint">系統記得每位客人沒來拿幾次。第 1 次只提醒，滿 2 次自動暫停 LINE 預訂。</p>';
+  h+='<div class="olist" id="creditlist">'+rows.map(function(n){
+    var c=S.credits[n],st,act='';
+    if(c>=2&&!S.override[n]){st=['已暫停 LINE 預訂','bad'];act='<span class="acts"><button class="btn small" data-act="unblock" data-v="'+esc(n)+'">放他一馬（解除）</button>'+(n===BAD_NAME?'<button class="btn small" data-act="identity" data-v="blocked">看他手機上的畫面</button>':'')+'</span>';}
+    else if(c>=2)st=['老闆已解除','warn'];
+    else st=['提醒過一次','warn'];
+    return '<div class="orow"><span class="nm">'+esc(n)+'</span>'+chip(st)+'<small>沒來拿 '+c+' 次</small>'+act+'</div>';
+  }).join('')+'</div>';
+  return h;
+}
+function ownLog(){
+  return '<p class="hint">系統自動做的每件事都有紀錄。今天已經傳了 <b class="num">'+S.pushes+'</b> 則 LINE 通知。</p><ul class="log">'+
+    S.log.slice().reverse().map(function(l){return '<li><time>'+fmt(l.t)+'</time><span>'+esc(l.text)+'</span></li>';}).join('')+'</ul>';
+}
+
+function cancelOrder(o){
+  var b=getB(o.batchId);
+  if(S.now>=b.start){toast('已經開始取餐，不能取消了');return;}
+  o.status='cancelled';
+  addLog(S.now,'cancel',o.name+' 自己取消 '+b.name+' '+o.qty+' '+cfg.main.unit+'');
+  pushChat({type:'text',from:'store',tag:'reply',text:'已取消 '+b.name+' '+o.qty+' '+cfg.main.unit+'。謝謝你提早說！'});
+  S.newPush=0;release(b,o.qty,S.now);
+  toast('已取消，名額自動空出來');
+}
+function act(a,v,f){
+  var o,b;
+  switch(a){
+    case 'cust':S.custScreen=v;break;
+    case 'identity':S.identity=v;S.selBatch=null;if(v==='blocked'){S.custScreen='order';S.orderSession=cfg.initialData.orderSession;S.view='cust';}toast(v==='blocked'?'現在是「'+BAD_NAME+'」的手機畫面':'切回一般客人');break;
+    case 'open-order':S.custScreen='order';S.orderSession=v;S.selBatch=null;
+      S.chat.push({id:S.nextMsg++,type:'text',from:'me',time:fmt(S.now),text:'預訂 '+SESS[v].short});break;
+    case 'osess':S.orderSession=v;S.selBatch=null;break;
+    case 'pick-batch':S.selBatch=v;S.form={qty:1,kimchi:0,essence:0};break;
+    case 'step':
+      var sb=getB(S.selBatch);if(!sb)break;
+      var cur=S.form[f]+Number(v),mx=f==='qty'?Math.min(5,remaining(sb)):5,mn=f==='qty'?1:0;
+      S.form[f]=Math.max(mn,Math.min(mx,cur));break;
+    case 'submit':
+      b=getB(S.selBatch);var nm=meName();
+      if(!b||!orderable(b)){toast('這'+cfg.batchUnit+'已經截止，請選別'+cfg.batchUnit+'');break;}
+      if(isBlocked(nm)){toast('這個帳號已暫停 LINE 預訂');break;}
+      if(S.form.qty>remaining(b)){toast('這'+cfg.batchUnit+'只剩 '+remaining(b)+' '+cfg.main.unit+'');break;}
+      o={id:S.nextId++,batchId:b.id,name:nm,phone4:'5678',qty:S.form.qty,kimchi:S.form.kimchi,essence:S.form.essence,status:'pending',isMe:true,src:'line'};
+      S.orders.push(o);
+      pushChat({type:'text',from:'store',tag:'reply',text:'✅ 預訂成功\n'+SESS[b.s].label+'\n'+b.name+' '+fmt(b.start)+'–'+fmt(b.end)+'\n'+items(o)+'\n\n取餐前 1 小時會傳 LINE 提醒你。'});
+      addLog(S.now,'order',nm+' 用 LINE 訂了 '+b.name+' '+o.qty+' '+cfg.main.unit+'');
+      S.selBatch=null;S.custScreen='mine';if(!DemoEngine.tourOn())toast('訂好了！老闆後台的數字也同時更新');break;
+    case 'join-wait':
+      b=getB(v);if(isBlocked(meName())){toast('這個帳號已暫停 LINE 預訂');break;}
+      b.waitlist.push({isMe:true,qty:Math.max(1,S.form.qty||1),name:meName()});
+      pushChat({type:'text',from:'store',tag:'reply',text:'已幫你排進 '+b.name+' 候補第 '+b.waitlist.length+' 位。有人取消會馬上通知你。'});
+      addLog(S.now,'wait',meName()+' 排進 '+b.name+' 候補');if(!DemoEngine.tourOn())toast('已排進候補');break;
+    case 'r-confirm':
+      o=getO(v);
+      if(o&&o.status==='pending'){o.status='confirmed';addLog(S.now,'remind',o.name+' 回覆會準時來拿（'+getB(o.batchId).name+'）');
+        S.chat.push({id:S.nextMsg++,type:'text',from:'me',time:fmt(S.now),text:'確認會到'});}
+      break;
+    case 'my-cancel':o=getO(v);if(o&&(o.status==='pending'||o.status==='confirmed'))cancelOrder(o);break;
+    case 'my-change':
+      o=getO(v);var sel=document.getElementById('chg-'+v);
+      if(o&&sel){var to=getB(sel.value),from=getB(o.batchId);
+        if(!orderable(to)||remaining(to)<o.qty){toast('那一'+cfg.batchUnit+'名額不夠');break;}
+        o.batchId=to.id;addLog(S.now,'order',o.name+' 自己改'+cfg.batchUnit+'：'+from.name+' → '+to.name);
+        pushChat({type:'text',from:'store',tag:'reply',text:'已改到 '+to.name+' '+fmt(to.start)+'–'+fmt(to.end)+'。'});toast('改好了，'+from.name+' 的名額自動空出來');}
+      break;
+    case 'offer-accept':
+      if(!S.offer){toast('這個名額已經過期了');break;}
+      var of=S.offer;b=getB(of.batchId);
+      S.orders.push({id:S.nextId++,batchId:b.id,name:of.name,phone4:'5678',qty:of.qty,kimchi:0,essence:0,status:'confirmed',isMe:true,src:'line'});
+      S.chat.forEach(function(m){if(m.id===of.msgId)m.answered='accepted';});
+      S.offer=null;addLog(S.now,'wait',of.name+' 接受候補，拿到 '+b.name+' '+of.qty+' '+cfg.main.unit+'');if(!DemoEngine.tourOn())toast('候補成功！');break;
+    case 'otab':S.ownerTab=v;break;
+    case 'lbatch':S.listBatch=v;break;
+    case 'o-pick':
+      o=getO(v);if(o){o.status='picked';addLog(S.now,'pick',o.name+' 拿走了（'+getB(o.batchId).name+' '+o.qty+' '+cfg.main.unit+'）');if(!DemoEngine.tourOn())toast('已記錄取餐');}
+      break;
+    case 'o-noshow':
+      o=getO(v);if(o){o.status='noshow';credit(o.name);addLog(S.now,'noshow','老闆記錄沒來拿：'+o.name+'（'+getB(o.batchId).name+' '+o.qty+' '+cfg.main.unit+'）');toast('已記錄，這位客人沒來拿的次數 +1');}
+      break;
+    case 'add-batch':
+      var bs=batchesOf(S.ownerSession),last=bs.reduce(function(a,x){return Math.max(a,x.start);},0),st=last+cfg.extraBatchSpacing;
+      if(st%1440>1380){toast('時間太晚了，不能再加開');break;}
+      var k=bs.filter(function(x){return x.name.indexOf(cfg.batchExtraName.trim())===0;}).length+1;
+      var nb={id:'x'+S.nextId++,s:S.ownerSession,name:cfg.batchExtraName+k,start:st,end:st+cfg.batchDuration,cap:cfg.extraBatchCapacity,waitlist:[]};
+      S.batches.push(nb);addLog(S.now,'order','老闆加開 '+nb.name+' '+fmt(nb.start)+'–'+fmt(nb.end)+'，'+cfg.extraBatchCapacity+' '+cfg.main.unit+'');
+      toast('加開好了，客人手機上馬上看得到');break;
+    case 'po-submit':
+      var p=S.po;b=getB(p.batch);var qn=parseInt(p.qty,10)||0;
+      var kn=cfg.addons.kimchi.phone?(parseInt(p.kimchi,10)||0):0;
+      var en=cfg.addons.essence.phone?(parseInt(p.essence,10)||0):0;
+      var digits=String(p.phone).replace(/\D/g,'');
+      if(!p.name.trim()){toast('請填客人稱呼');break;}
+      if(digits.length<8){toast('請填完整手機號碼，沒來拿時才找得到人');break;}
+      if(!b){toast('請選哪一'+cfg.batchUnit+'');break;}
+      if(qn<1){toast(''+cfg.main.short+'至少 1 '+cfg.main.unit+'');break;}
+      if(qn>remaining(b)){toast('這'+cfg.batchUnit+'只剩 '+remaining(b)+' '+cfg.main.unit+'');break;}
+      S.orders.push({id:S.nextId++,batchId:b.id,name:p.name.trim(),phone4:digits.slice(-4),qty:qn,kimchi:Math.max(0,kn),essence:Math.max(0,en),status:'confirmed',isMe:false,src:'phone',sim:{come:true}});
+      addLog(S.now,'order','電話訂的：'+p.name.trim()+' '+b.name+' '+qn+' '+cfg.main.unit+'');
+      S.po={name:'',phone:'',batch:p.batch,qty:1,kimchi:0,essence:0};toast('訂好了，名額已扣');break;
+    case 'unblock':S.override[v]=true;addLog(S.now,'system','老闆解除 '+v+' 的暫停');toast('已解除，這位客人可以再用 LINE 訂');break;
+  }
+}
+
+/* ---------- guided tour ---------- */
+function bNoShow(bid){var os=ordersOf(bid).filter(function(o){return o.status==='noshow';});return {n:os.length,q:os.reduce(function(a,o){return a+o.qty;},0)};}
+function init(client){
+  cfg=client;STORE=cfg.store;PRICE={chicken:cfg.main.price,kimchi:cfg.addons.kimchi.price,essence:cfg.addons.essence.price};
+  ME_NAME=cfg.meName;BAD_NAME=cfg.badName;NAMES=cfg.names;SESS=cfg.sessions;
+  seed=cfg.initialData.seed;ni=0;
+  S={now:cfg.initialData.now,identity:'normal',view:'cust',custScreen:'chat',orderSession:cfg.initialData.orderSession,selBatch:null,form:{qty:1,kimchi:0,essence:0},
+    ownerSession:cfg.initialData.ownerSession,ownerTab:'overview',listBatch:cfg.initialData.listBatch,orders:[],chat:[],log:[],pushes:0,credits:{},override:{},
+    offer:null,nextId:1,nextMsg:1,unread:0,newPush:0,po:{name:'',phone:'',batch:cfg.initialData.phoneBatch,qty:1,kimchi:0,essence:0},
+    batches:(function(){
+      var a=[];
+      cfg.batchDays.forEach(function(day){cfg.batchSchedule.forEach(function(t,i){a.push({id:day.prefix+(i+day.idOffset),s:day.key,name:t[0],start:t[1]+day.minuteOffset,end:t[1]+day.minuteOffset+cfg.batchDuration,cap:cfg.batchCapacity,waitlist:[]});});});
+      return a;
+    })()
+  };
+  var first;
+  function lineCount(id){return ordersOf(id).filter(function(o){return o.src==='line';}).length;}
+  cfg.scenario.forEach(function(sc){
+    var total=sc.randomTotal?3+Math.floor(rnd()*7):sc.total,q=fill(total,sc.first);
+    q.forEach(function(x,i){
+      var last=i===q.length-1,penultimate=i===q.length-2;
+      var status=last&&sc.lastStatus?sc.lastStatus:sc.status,sim=null;
+      if(last&&sc.last){status=sc.last.status;sim=sc.last.sim;}
+      else if(penultimate&&sc.penultimate){status=sc.penultimate.status;sim=sc.penultimate.sim;}
+      else if(sc.special&&sc.special[i])sim=sc.special[i];
+      var o=addSim(sc.batch,x,status,sim);
+      if(last&&sc.creditLast){credit(o.name);first=o;}
+    });
+  });
+  Object.keys(cfg.initialData.credits).forEach(function(name){S.credits[name]=cfg.initialData.credits[name];});
+  S.pushes=cfg.seedLog({lineCount:lineCount,first:first,addLog:addLog})+cfg.initialData.pushesExtra;
+  S.chat.push({id:S.nextMsg++,type:'text',from:'store',tag:'push',time:cfg.chatTime,text:cfg.welcomeChat});
+  S.chat.push({id:S.nextMsg++,type:'schedule',from:'store',tag:'push',time:cfg.chatTime});
+}
+
+function events(){
+  var ev=[];
+  batchesOf(cfg.batchDays[0].key).forEach(function(b){
+    [[b.start-60,'取餐提醒'],[b.start-15,'第二次提醒'],[b.start+5,'開始取餐'],[b.end+10,'判定沒來拿的']].forEach(function(p){
+      if(p[0]>S.now&&p[0]<=1439)ev.push({t:p[0],l:b.name+' '+p[1]});
+    });
+  });
+  if(S.offer&&S.offer.expires>S.now)ev.push({t:S.offer.expires,l:'候補通知到期'});
+  return ev;
+}
+
+function onChange(e){
+  var t=e.target;
+  if(t.getAttribute('data-change')==='osess'){S.ownerSession=t.value;return true;}
+  if(t.hasAttribute('data-bind'))S.po[t.getAttribute('data-bind')]=t.value;
+  return false;
+}
+function onInput(e){var t=e.target;if(t.hasAttribute&&t.hasAttribute('data-bind'))S.po[t.getAttribute('data-bind')]=t.value;}
+return {init:init,state:function(){return S;},setState:function(s){S=s;},renderPanels:function(){renderCust();renderOwner();},
+  act:act,tick:tick,events:events,unread:function(){return S.unread;},onChange:onChange,onInput:onInput,
+  tourContext:function(engine){return {S:function(){return S;},act:act,advance:engine.advance,myOrder:myOrder,getB:getB,bNoShow:bNoShow};},
+  scrollHints:function(){return {chatLen:S.chat.length,custScreen:S.custScreen};},
+  resetPushes:function(){S.newPush=0;},newPushes:function(){return S.newPush;}};
+})();
+DemoEngine.register(PreorderApp);
+DemoEngine.start();
+
+})();</script>
